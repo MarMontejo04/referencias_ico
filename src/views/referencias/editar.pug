@@ -1,0 +1,252 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Editar Referencia
+      span Actualizar datos
+    .d-flex.gap-2
+      a.btn.btn-secondary(href=`/referencias/${referencia.id_referencia}`) ← Volver
+
+  .page-content
+
+    if error
+      .flash.flash-error= error
+
+    .card
+      .card-header
+        span.card-title Editar referencia
+        - const tipo = referencia.tipos_fuente ? referencia.tipos_fuente.nombre : '—'
+        - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
+        span.badge-tipo(class=claseTipo)= tipo
+
+      .card-body
+        form(action=`/referencias/${referencia.id_referencia}/editar`, method='POST', novalidate)
+
+          .section-divider
+            h3 Información general
+
+          .row.g-3
+
+            .col-md-12
+              .form-group
+                label.field-label(for='titulo') Título *
+                input#titulo.field-input(type='text' name='titulo' value=referencia.titulo required)
+
+            .col-md-12
+              .form-group
+                label.field-label(for='subtitulo') Subtítulo
+                input#subtitulo.field-input(type='text' name='subtitulo' value=referencia.subtitulo || '')
+
+            .col-md-3
+              .form-group
+                label.field-label(for='anio_publicacion') Año
+                input#anio_publicacion.field-input.field-mono(
+                  type='number'
+                  name='anio_publicacion'
+                  value=referencia.anio_publicacion || ''
+                  min='1000' max='2099'
+                )
+
+            .col-md-3
+              .form-group
+                label.field-label(for='idioma') Idioma
+                input#idioma.field-input(type='text' name='idioma' value=referencia.idioma || '')
+
+            .col-md-3
+              .form-group
+                label.field-label(for='doi') DOI
+                input#doi.field-input.field-mono(type='text' name='doi' value=referencia.doi || '')
+
+            .col-md-3
+              .form-group
+                label.field-label(for='url') URL
+                input#url.field-input.field-mono(type='url' name='url' value=referencia.url || '')
+
+            .col-md-12
+              .form-group
+                label.field-label(for='resumen') Resumen
+                textarea#resumen.field-input.field-textarea(name='resumen')= referencia.resumen || ''
+
+          //- Campos de subtipo según tipo de fuente
+          - const tipoNombre = referencia.tipos_fuente ? referencia.tipos_fuente.nombre : ''
+
+          if tipoNombre === 'Libro' && referencia.libro
+
+            .section-divider
+              h3 Datos del Libro
+
+            .row.g-3
+
+              .col-md-4
+                .form-group
+                  label.field-label Editorial *
+                  input.field-input(type='text' name='editorial' value=referencia.libro.editorial || '')
+
+              .col-md-2
+                .form-group
+                  label.field-label Edición
+                  input.field-input.field-mono(type='number' name='numero_edicion' value=referencia.libro.numero_edicion || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label Ciudad
+                  input.field-input(type='text' name='ciudad_publicacion' value=referencia.libro.ciudad_publicacion || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label País
+                  input.field-input(type='text' name='pais_publicacion' value=referencia.libro.pais_publicacion || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label ISBN-13
+                  input.field-input.field-mono(type='text' name='isbn13' value=referencia.libro.isbn13 || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label ISBN-10
+                  input.field-input.field-mono(type='text' name='isbn10' value=referencia.libro.isbn10 || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label Total páginas
+                  input.field-input.field-mono(type='number' name='total_paginas' value=referencia.libro.total_paginas || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label Volumen
+                  input.field-input(type='text' name='volumen' value=referencia.libro.volumen || '')
+
+          if tipoNombre === 'Tesis' && referencia.tesi
+
+            .section-divider
+              h3 Datos de la Tesis
+
+            .row.g-3
+
+              .col-md-3
+                .form-group
+                  label.field-label Grado *
+                  select.field-select(name='grado')
+                    each g in ['Licenciatura','Especialidad','Maestria','Doctorado']
+                      option(value=g selected=(referencia.tesi.grado === g))= g
+
+              .col-md-5
+                .form-group
+                  label.field-label Institución *
+                  input.field-input(type='text' name='institucion' value=referencia.tesi.institucion || '')
+
+              .col-md-4
+                .form-group
+                  label.field-label Facultad
+                  input.field-input(type='text' name='facultad' value=referencia.tesi.facultad || '')
+
+              .col-md-4
+                .form-group
+                  label.field-label Departamento
+                  input.field-input(type='text' name='departamento' value=referencia.tesi.departamento || '')
+
+              .col-md-4
+                .form-group
+                  label.field-label Ciudad
+                  input.field-input(type='text' name='ciudad' value=referencia.tesi.ciudad || '')
+
+              .col-md-4
+                .form-group
+                  label.field-label País
+                  input.field-input(type='text' name='pais' value=referencia.tesi.pais || '')
+
+              .col-md-6
+                .form-group
+                  label.field-label Director de tesis
+                  input.field-input(type='text' name='director_tesis' value=referencia.tesi.director_tesis || '')
+
+              .col-md-6
+                .form-group
+                  label.field-label Codirector
+                  input.field-input(type='text' name='codirector' value=referencia.tesi.codirector || '')
+
+          if tipoNombre === 'Artículo de Revista' && referencia.articulo_revista
+
+            .section-divider
+              h3 Datos del Artículo
+
+            .row.g-3
+
+              .col-md-6
+                .form-group
+                  label.field-label Nombre de la revista *
+                  input.field-input(type='text' name='nombre_revista' value=referencia.articulo_revista.nombre_revista || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label ISSN
+                  input.field-input.field-mono(type='text' name='issn' value=referencia.articulo_revista.issn || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label e-ISSN
+                  input.field-input.field-mono(type='text' name='eissn' value=referencia.articulo_revista.eissn || '')
+
+              .col-md-2
+                .form-group
+                  label.field-label Volumen
+                  input.field-input.field-mono(type='text' name='volumen' value=referencia.articulo_revista.volumen || '')
+
+              .col-md-2
+                .form-group
+                  label.field-label Número
+                  input.field-input.field-mono(type='text' name='numero' value=referencia.articulo_revista.numero || '')
+
+              .col-md-2
+                .form-group
+                  label.field-label Pág. inicio
+                  input.field-input.field-mono(type='text' name='pagina_inicio' value=referencia.articulo_revista.pagina_inicio || '')
+
+              .col-md-2
+                .form-group
+                  label.field-label Pág. fin
+                  input.field-input.field-mono(type='text' name='pagina_fin' value=referencia.articulo_revista.pagina_fin || '')
+
+              .col-md-4
+                .form-group
+                  label.field-label Editorial
+                  input.field-input(type='text' name='editorial' value=referencia.articulo_revista.editorial || '')
+
+          if tipoNombre === 'Página Web' && referencia.pagina_web
+
+            .section-divider
+              h3 Datos de la Página Web
+
+            .row.g-3
+
+              .col-md-6
+                .form-group
+                  label.field-label Nombre del sitio
+                  input.field-input(type='text' name='nombre_sitio' value=referencia.pagina_web.nombre_sitio || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label Fecha publicación
+                  input.field-input(type='date' name='fecha_publicacion' value=referencia.pagina_web.fecha_publicacion || '')
+
+              .col-md-3
+                .form-group
+                  label.field-label Fecha consulta
+                  input.field-input(type='date' name='fecha_consulta' value=referencia.pagina_web.fecha_consulta || '')
+
+          //- Palabras clave
+          .section-divider
+            h3 Palabras clave
+
+          .form-group
+            label.field-label(for='palabras_clave') Separadas por coma
+            - const palabrasActuales = (referencia.palabra_claves || []).map(p => p.palabra).join(', ')
+            input#palabras_clave.field-input(type='text' name='palabras_clave' value=palabrasActuales)
+
+          hr(style='margin:1.5rem 0;border-color:var(--border)')
+
+          .d-flex.gap-2
+            button.btn.btn-primary(type='submit') Guardar cambios
+            a.btn.btn-secondary(href=`/referencias/${referencia.id_referencia}`) Cancelar

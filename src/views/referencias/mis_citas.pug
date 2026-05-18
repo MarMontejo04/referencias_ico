@@ -1,0 +1,62 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Mis Citas
+      span Historial de citas generadas
+
+  .page-content
+
+    if error
+      .flash.flash-error= error
+
+    if citas.length === 0
+      .card
+        .card-body.empty-state
+          svg(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor')
+            path(stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z')
+          p Aún no tienes citas generadas.
+          a.btn.btn-primary(href='/referencias') Ir a mis referencias
+
+    else
+
+      each cita in citas
+
+        - const ref = cita.referencia
+        - const tipo = ref && ref.tipos_fuente ? ref.tipos_fuente.nombre : '—'
+        - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
+
+        .cita-card
+
+          .cita-card-header
+
+            .d-flex.align-items-center.gap-2
+              span.cita-formato-tag(style='margin:0')
+                | #{cita.formato_citum ? cita.formato_citum.nombre : '—'}
+              span.badge-tipo(class=claseTipo)= tipo
+              if ref
+                a(href=`/referencias/${ref.id_referencia}` style='font-size:.78rem;color:var(--blue);font-weight:600;text-decoration:none')
+                  = ref.titulo
+
+            .d-flex.align-items-center.gap-2
+              button.btn-copy(
+                onclick=`copiarTextoDirecto('${cita.texto_referencia_completa.replace(/'/g, "\\'")}')`
+              ) Copiar
+              a.btn.btn-gold.btn-sm(href=`/referencias/${ref ? ref.id_referencia : ''}/citar`) Recitar
+              form(action=`/mis-citas/${cita.id_cita}/eliminar` method='POST' style='margin:0')
+                button.btn.btn-danger.btn-sm(
+                  type='submit'
+                  onclick="return confirm('¿Eliminar esta cita?')"
+                ) Eliminar
+
+          .cita-card-body
+
+            p.field-label Cita en texto
+            p(style='font-family:\"IBM Plex Mono\",monospace;font-size:.88rem;color:var(--blue-dk);font-weight:600;margin-bottom:.85rem')
+              = cita.texto_cita
+
+            p.field-label Referencia completa
+            p.cita-referencia= cita.texto_referencia_completa
+
+        br

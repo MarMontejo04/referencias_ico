@@ -1,0 +1,59 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | #{autor.apellido_paterno}, #{autor.nombres}
+      span Perfil de autor
+    .d-flex.gap-2
+      a.btn.btn-secondary(href='/autores') ← Autores
+      a.btn.btn-secondary(href=`/autores/${autor.id_autor}/editar`) Editar
+
+  .page-content
+
+    .row.g-3
+
+      .col-md-5
+        .card
+          .card-header
+            span.card-title Datos del autor
+
+          .card-body
+
+            p.field-label Nombre completo
+            p(style='font-size:1.1rem;font-weight:700;margin-bottom:1rem')
+              | #{autor.apellido_paterno}#{autor.apellido_materno ? ' '+autor.apellido_materno : ''}, #{autor.nombres}
+
+            if autor.institucion_afiliacion
+              p.field-label Institución
+              p(style='font-size:.88rem;margin-bottom:.75rem')= autor.institucion_afiliacion
+
+            if autor.email
+              p.field-label Correo electrónico
+              p(style='font-size:.85rem')
+                a(href=`mailto:${autor.email}` style='color:var(--blue)')= autor.email
+
+      .col-md-7
+        .card
+          .card-header
+            span.card-title Referencias asociadas
+            - const refs = autor.referencias || []
+            span(style='font-size:.75rem;color:var(--text-muted)') #{refs.length} referencia#{refs.length !== 1 ? 's' : ''}
+
+          .card-body
+
+            - const refs = autor.referencias || []
+            if refs.length === 0
+              p(style='font-size:.82rem;color:var(--text-muted)') Este autor no tiene referencias registradas en el sistema.
+
+            else
+              each ref in refs
+                .d-flex.align-items-center.justify-content-between(
+                  style='padding:.6rem 0;border-bottom:1px solid var(--border)'
+                )
+                  div
+                    a(href=`/referencias/${ref.id_referencia}` style='font-size:.85rem;font-weight:600;color:var(--text);text-decoration:none')
+                      = ref.titulo
+                    span.muted(style='font-size:.72rem;display:block;color:var(--text-muted)')
+                      = ref.anio_publicacion || 's.f.'
+                  a.btn.btn-secondary.btn-sm(href=`/referencias/${ref.id_referencia}`) Ver

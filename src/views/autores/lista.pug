@@ -1,0 +1,61 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Autores
+      span Catálogo de autores
+    a.btn.btn-primary(href='/autores/nuevo') ＋ Nuevo autor
+
+  .page-content
+
+    if error
+      .flash.flash-error= error
+    if exito
+      .flash.flash-success= exito
+
+    .card
+
+      .card-header
+        span.card-title #{autores.length} autor#{autores.length !== 1 ? 'es' : ''} registrado#{autores.length !== 1 ? 's' : ''}
+        input.field-input(
+          type='text'
+          placeholder='Buscar autor...'
+          style='max-width:250px'
+          oninput='filtrarAutores(this.value)'
+        )
+
+      if autores.length === 0
+        .card-body.empty-state
+          p No hay autores registrados aún.
+          a.btn.btn-primary(href='/autores/nuevo') Agregar primer autor
+
+      else
+        .table-wrap
+          table.ref-table#tabla-autores
+            thead
+              tr
+                th Apellido paterno
+                th Nombre(s)
+                th Apellido materno
+                th Institución
+                th Acciones
+            tbody
+              each autor in autores
+                tr(
+                  data-nombre=`${autor.apellido_paterno} ${autor.nombres}`.toLowerCase()
+                )
+                  td(style='font-weight:600') #{autor.apellido_paterno}
+                  td= autor.nombres
+                  td.muted= autor.apellido_materno || '—'
+                  td.muted= autor.institucion_afiliacion || '—'
+                  td
+                    .action-group
+                      a.btn.btn-secondary.btn-sm(href=`/autores/${autor.id_autor}`) Ver
+                      a.btn.btn-secondary.btn-sm(href=`/autores/${autor.id_autor}/editar`) Editar
+                      if usuario && usuario.rol === 'Administrador'
+                        form(action=`/autores/${autor.id_autor}/eliminar` method='POST' style='margin:0')
+                          button.btn.btn-danger.btn-sm(
+                            type='submit'
+                            onclick="return confirm('¿Eliminar este autor?')"
+                          ) Eliminar

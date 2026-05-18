@@ -1,0 +1,53 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Nuevo Autor
+      span Registrar autor
+    a.btn.btn-secondary(href='/autores') ← Volver
+
+  .page-content
+
+    if error
+      .flash.flash-error= error
+
+    .card(style='max-width:680px')
+      .card-header
+        span.card-title Datos del autor
+
+      .card-body
+        form(action='/autores', method='POST', novalidate)
+
+          .row.g-3
+
+            .col-md-6
+              .form-group
+                label.field-label(for='nombres') Nombre(s) *
+                input#nombres.field-input(type='text' name='nombres' placeholder='Nombre(s) del autor' required)
+
+            .col-md-6
+              .form-group
+                label.field-label(for='apellido_paterno') Apellido paterno *
+                input#apellido_paterno.field-input(type='text' name='apellido_paterno' placeholder='Apellido paterno' required)
+
+            .col-md-6
+              .form-group
+                label.field-label(for='apellido_materno') Apellido materno
+                input#apellido_materno.field-input(type='text' name='apellido_materno' placeholder='Apellido materno (opcional)')
+
+            .col-md-6
+              .form-group
+                label.field-label(for='email') Correo electrónico
+                input#email.field-input.field-mono(type='email' name='email' placeholder='correo@institucion.edu')
+
+            .col-md-12
+              .form-group
+                label.field-label(for='institucion_afiliacion') Institución / afiliación
+                input#institucion_afiliacion.field-input(type='text' name='institucion_afiliacion' placeholder='Universidad, centro de investigación, etc.')
+
+          hr(style='margin:1.5rem 0;border-color:var(--border)')
+
+          .d-flex.gap-2
+            button.btn.btn-primary(type='submit') Guardar autor
+            a.btn.btn-secondary(href='/autores') Cancelar

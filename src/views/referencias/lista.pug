@@ -1,0 +1,87 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Mis Referencias
+      span Biblioteca personal
+    a.btn.btn-primary(href='/referencias/nueva')
+      | ＋ Nueva referencia
+
+  .page-content
+
+    if error
+      .flash.flash-error= error
+    if exito
+      .flash.flash-success= exito
+
+    .card
+
+      .card-header
+        span.card-title
+          | #{referencias.length} referencia#{referencias.length !== 1 ? 's' : ''} registrada#{referencias.length !== 1 ? 's' : ''}
+        //- Filtro rápido
+        input#buscar.field-input(
+          type='text'
+          placeholder='Buscar por título o autor...'
+          style='max-width:280px'
+          oninput='filtrarReferencias(this.value)'
+        )
+
+      if referencias.length === 0
+        .empty-state
+          svg(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor')
+            path(stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25')
+          p Aún no tienes referencias registradas.
+          a.btn.btn-primary(href='/referencias/nueva') Agregar primera referencia
+
+      else
+        .table-wrap
+          table.ref-table#tabla-refs
+
+            thead
+              tr
+                th Título
+                th Tipo
+                th Autores
+                th Año
+                th Acciones
+
+            tbody
+              each ref in referencias
+                tr(data-titulo=ref.titulo.toLowerCase() data-autores=(ref.autors || []).map(a => a.apellido_paterno).join(' ').toLowerCase())
+
+                  //- Título
+                  td
+                    a(href=`/referencias/${ref.id_referencia}` style='color:var(--text);text-decoration:none;font-weight:600')
+                      = ref.titulo
+                    if ref.subtitulo
+                      span(style='display:block;font-size:.74rem;color:var(--text-muted)') — #{ref.subtitulo}
+
+                  //- Tipo de fuente
+                  td
+                    - const tipo = ref.tipos_fuente ? ref.tipos_fuente.nombre : '—'
+                    - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
+                    span.badge-tipo(class=claseTipo)= tipo
+
+                  //- Autores
+                  td.muted
+                    - const autores = ref.autors || []
+                    if autores.length === 0
+                      | —
+                    else if autores.length === 1
+                      | #{autores[0].apellido_paterno}, #{autores[0].nombres}
+                    else
+                      | #{autores[0].apellido_paterno} et al.
+
+                  //- Año
+                  td.muted= ref.anio_publicacion || '—'
+
+                  //- Acciones
+                  td
+                    .action-group
+                      a.btn.btn-secondary.btn-sm(href=`/referencias/${ref.id_referencia}`) Ver
+                      a.btn.btn-gold.btn-sm(href=`/referencias/${ref.id_referencia}/citar`) Citar
+                      a.btn.btn-secondary.btn-sm(href=`/referencias/${ref.id_referencia}/editar`) Editar
+                      form(action=`/referencias/${ref.id_referencia}/eliminar` method='POST' style='margin:0' onsubmit="return confirm('¿Eliminar esta referencia? Esta acción no se puede deshacer.')")
+                        button.btn.btn-danger.btn-sm(type='submit') Eliminar

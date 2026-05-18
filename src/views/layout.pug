@@ -1,0 +1,71 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title #{typeof pageTitle !== 'undefined' ? pageTitle + ' · ' : ''}Referencias ICO
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap')
+    link(rel='stylesheet', href='/css/referencias.css')
+    block head
+
+  body
+    .app-shell
+
+      aside.sidebar
+
+        .sidebar-brand
+          .sidebar-brand-badge
+            span REF
+          .sidebar-brand-text
+            strong Referencias ICO
+            small FES Aragón · UNAM
+
+        nav.sidebar-nav
+
+          p.nav-section Biblioteca
+
+          a.nav-link(
+            href='/referencias'
+            class=(typeof activePage !== 'undefined' && activePage === 'referencias' ? 'active' : '')
+          ) 📚 &nbsp;Mis referencias
+
+          a.nav-link(
+            href='/referencias/nueva'
+            class=(typeof activePage !== 'undefined' && activePage === 'nueva' ? 'active' : '')
+          ) ＋ &nbsp;Nueva referencia
+
+          a.nav-link(
+            href='/mis-citas'
+            class=(typeof activePage !== 'undefined' && activePage === 'citas' ? 'active' : '')
+          ) 📝 &nbsp;Mis citas
+
+          p.nav-section(style='margin-top:1rem') Catálogo
+
+          a.nav-link(
+            href='/autores'
+            class=(typeof activePage !== 'undefined' && activePage === 'autores' ? 'active' : '')
+          ) 👤 &nbsp;Autores
+
+          p.nav-section(style='margin-top:1rem') Sesión
+
+          form(action='/auth/logout', method='POST', style='margin:0')
+            button.nav-link.danger(
+              type='submit'
+              style='background:none;border:none;width:100%;text-align:left;cursor:pointer;font-family:inherit'
+            ) ↩ &nbsp;Cerrar sesión
+
+        .sidebar-footer
+          if usuario
+            .sidebar-user
+              strong #{usuario.nombre} #{usuario.ap_paterno}
+              | #{usuario.rol} · #{usuario.email}
+
+      .main-content
+        block content
+
+    script(src='/bootstrap/js/bootstrap.bundle.min.js')
+    script(src='/js/referencias.js')
+    block scripts

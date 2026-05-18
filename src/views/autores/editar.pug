@@ -1,0 +1,57 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Editar Autor
+      span #{autor.apellido_paterno}, #{autor.nombres}
+    a.btn.btn-secondary(href=`/autores/${autor.id_autor}`) ← Volver
+
+  .page-content
+
+    if error
+      .flash.flash-error= error
+
+    .card(style='max-width:680px')
+      .card-header
+        span.card-title Actualizar datos del autor
+
+      .card-body
+        form(action=`/autores/${autor.id_autor}/editar`, method='POST', novalidate)
+
+          .row.g-3
+
+            .col-md-6
+              .form-group
+                label.field-label(for='nombres') Nombre(s) *
+                input#nombres.field-input(type='text' name='nombres' value=autor.nombres required)
+
+            .col-md-6
+              .form-group
+                label.field-label(for='apellido_paterno') Apellido paterno *
+                input#apellido_paterno.field-input(type='text' name='apellido_paterno' value=autor.apellido_paterno required)
+
+            .col-md-6
+              .form-group
+                label.field-label(for='apellido_materno') Apellido materno
+                input#apellido_materno.field-input(type='text' name='apellido_materno' value=autor.apellido_materno || '')
+
+            .col-md-6
+              .form-group
+                label.field-label(for='email') Correo electrónico
+                input#email.field-input.field-mono(type='email' name='email' value=autor.email || '')
+
+            .col-md-12
+              .form-group
+                label.field-label(for='institucion_afiliacion') Institución / afiliación
+                input#institucion_afiliacion.field-input(
+                  type='text'
+                  name='institucion_afiliacion'
+                  value=autor.institucion_afiliacion || ''
+                )
+
+          hr(style='margin:1.5rem 0;border-color:var(--border)')
+
+          .d-flex.gap-2
+            button.btn.btn-primary(type='submit') Guardar cambios
+            a.btn.btn-secondary(href=`/autores/${autor.id_autor}`) Cancelar

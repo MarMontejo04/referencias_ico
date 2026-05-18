@@ -1,43 +1,44 @@
-import express from "express";
-import db from "../config/db.js";
-import cookieParser from "cookie-parser";
-import csurf from "csurf";
+import express      from "express";
+import session      from "express-session";
+import db           from "../config/db.js";
+import path         from "path";
+import { fileURLToPath } from "url";
 
-// Crear aplicación
+import "../src/models/index.js";
+import referenciaRoutes from "./routes/referenciaRoutes.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname  = path.dirname(__filename);
+
 const app = express();
 
-// Acceso a datos formulario
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-//Habilitar cookie parser
-app.use(cookieParser())
+app.use(session({
+  secret:            process.env.SESSION_SECRET || "referencias_ico_secret",
+  resave:            false,
+  saveUninitialized: false,
+  cookie:            { maxAge: 1000 * 60 * 60 * 4 },
+}));
 
-//csurf
-app.use(csurf({cookie:true}))
-
-// Pug
 app.set("view engine", "pug");
-app.set("views", "./src/views");
+app.set("views",       path.join(__dirname, "views"));
 
-// Archivos estáticos
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/bootstrap", express.static(
+  path.resolve("node_modules/bootstrap/dist")
+));
 
+app.use("/", referenciaRoutes);
 
-// Routes
-
-
-
-// Conexion con BD
 try {
   await db.authenticate();
   await db.sync();
   console.log("Conexión exitosa con la BD");
 } catch (error) {
-  console.log(error);
+  console.error(error);
 }
 
-const port = 4800;
-
-app.listen(port, () => {
-  console.log(`Esperando peticiones del puerto ${port}`);
-});
+const port = process.env.PORT || 4000;
+app.listen(port, () => console.log(`Servidor en puerto ${port}`));

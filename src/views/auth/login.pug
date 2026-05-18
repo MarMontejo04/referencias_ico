@@ -1,0 +1,186 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title ICO — Acceso · Referencias
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap')
+    link(rel='stylesheet', href='/css/referencias.css')
+    style.
+      body { background: var(--bg); }
+      .login-wrapper {
+        display: flex;
+        min-height: 100vh;
+      }
+      .col-info {
+        flex: 0 0 46%;
+        background-color: var(--blue);
+        background-image:
+          radial-gradient(ellipse at 80% 8%,  rgba(200,168,75,.18) 0%, transparent 55%),
+          radial-gradient(ellipse at 10% 90%, rgba(0,45,99,.8)     0%, transparent 50%),
+          linear-gradient(160deg, var(--blue-dk) 0%, var(--blue) 60%);
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 3rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .col-info::before {
+        content: '';
+        position: absolute; inset: 0;
+        background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+        background-size: 26px 26px;
+        pointer-events: none;
+      }
+      .col-info::after {
+        content: '';
+        position: absolute;
+        top:0; right:0; width:4px; height:100%;
+        background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+        opacity: .45;
+      }
+      .brand {
+        display:flex; align-items:center; gap:.8rem; margin-bottom:2.5rem; position:relative;
+      }
+      .brand-badge {
+        width:46px; height:46px;
+        border: 2px solid var(--gold);
+        border-radius:6px;
+        display:flex; align-items:center; justify-content:center;
+      }
+      .brand-badge span {
+        font-family:'IBM Plex Mono',monospace; font-weight:600;
+        font-size:.78rem; color:var(--gold); letter-spacing:.05em;
+      }
+      .brand-text strong { display:block; font-size:.9rem; font-weight:600; color:#fff; }
+      .brand-text small  { font-size:.65rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.1em; }
+      .info-tag {
+        display:inline-block; font-size:.6rem; font-weight:700; letter-spacing:.2em;
+        text-transform:uppercase; color:var(--gold);
+        border:1px solid rgba(200,168,75,.4); border-radius:2px;
+        padding:.2rem .6rem; margin-bottom:1rem;
+      }
+      .info-title {
+        font-size:1.85rem; font-weight:700; color:#fff;
+        line-height:1.2; margin-bottom:1.25rem; letter-spacing:-.02em;
+      }
+      .info-sub {
+        font-size:.75rem; font-weight:600; color:rgba(255,255,255,.55);
+        letter-spacing:.12em; text-transform:uppercase; margin-bottom:.6rem;
+      }
+      .info-list { list-style:none; margin-bottom:1.75rem; }
+      .info-list li {
+        display:flex; align-items:flex-start; gap:.55rem;
+        font-size:.84rem; color:rgba(255,255,255,.8);
+        padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.07); line-height:1.4;
+      }
+      .info-list li::before {
+        content:''; flex-shrink:0; width:5px; height:5px; border-radius:50%;
+        background:var(--gold); margin-top:.5rem;
+      }
+      .info-footer {
+        margin-top:auto; border-top:1px solid rgba(255,255,255,.1); padding-top:1.25rem;
+      }
+      .info-footer p { font-size:.65rem; color:rgba(255,255,255,.35); line-height:1.6; }
+      /* ── Columna derecha ── */
+      .col-form {
+        flex:1; background:var(--bg);
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+        padding:3rem 2.5rem; min-height:100vh;
+      }
+      .form-card {
+        width:100%; max-width:390px;
+        animation: cardIn .45s cubic-bezier(.22,1,.36,1) both;
+      }
+      @keyframes cardIn {
+        from { opacity:0; transform:translateY(18px); }
+        to   { opacity:1; transform:translateY(0); }
+      }
+      .form-header { margin-bottom:2rem; }
+      .form-header-label {
+        font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+        color:var(--blue); margin-bottom:.3rem;
+      }
+      .form-header-title { font-size:1.55rem; font-weight:700; color:var(--text); line-height:1.2; }
+      .form-header-line {
+        width:38px; height:3px; background:var(--gold); border-radius:2px; margin-top:.55rem;
+      }
+      .form-footer-note {
+        text-align:center; font-size:.65rem; color:var(--text-muted);
+        margin-top:1.75rem; letter-spacing:.06em; text-transform:uppercase;
+      }
+
+  body
+    .login-wrapper
+
+      .col-info
+        .brand
+          .brand-badge
+            span REF
+          .brand-text
+            strong Sistema de Referencias
+            small FES Aragón · UNAM
+
+        div(style='position:relative;flex:1')
+          span.info-tag Sistema Académico
+          h1.info-title Gestor de Referencias Formales
+
+          p.info-sub Antes de comenzar, recuerda:
+          ul.info-list
+            li Registra tus fuentes con datos completos para obtener citas correctas.
+            li Soportamos formatos APA 7, IEEE, MLA 9 y Chicago 17.
+            li Puedes registrar libros, tesis, artículos de revista y páginas web.
+            li Las citas generadas quedan guardadas en tu historial personal.
+            li Alumnos y profesores comparten el mismo sistema de acceso.
+
+        .info-footer
+          p
+            | Sistema de Gestión de Referencias · FES Aragón · UNAM · #{new Date().getFullYear()}
+            br
+            | Para soporte técnico contacta a tu área académica.
+
+      .col-form
+        .form-card
+
+          .form-header
+            p.form-header-label Acceso al sistema
+            h2.form-header-title Iniciar sesión
+            .form-header-line
+
+          form(action='/auth/login', method='POST', novalidate)
+
+            .form-group
+              label.field-label(for='email') Correo electrónico
+              input#email.field-input.field-mono(
+                type='email'
+                name='email'
+                placeholder='correo@aragon.unam.mx'
+                autocomplete='email'
+                required
+              )
+
+            .form-group
+              label.field-label(for='password') Contraseña
+              input#password.field-input.field-mono(
+                type='password'
+                name='password'
+                placeholder='••••••••'
+                autocomplete='current-password'
+                required
+              )
+
+            if error
+              .flash.flash-error= error
+
+            if exito
+              .flash.flash-success= exito
+
+            button.btn.btn-primary(type='submit', style='width:100%;justify-content:center;padding:.72rem')
+              | Iniciar sesión
+
+          p.form-footer-note FES Aragón · UNAM · #{new Date().getFullYear()}
+
+    script(src='/bootstrap/js/bootstrap.bundle.min.js')

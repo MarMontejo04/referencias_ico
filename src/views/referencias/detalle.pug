@@ -1,0 +1,149 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Detalle de Referencia
+      span #{referencia.tipos_fuente ? referencia.tipos_fuente.nombre : ''}
+    .d-flex.gap-2
+      a.btn.btn-secondary(href='/referencias') ← Volver
+      a.btn.btn-gold(href=`/referencias/${referencia.id_referencia}/citar`) 📝 Generar cita
+      a.btn.btn-secondary(href=`/referencias/${referencia.id_referencia}/editar`) Editar
+      form(action=`/referencias/${referencia.id_referencia}/eliminar` method='POST' style='margin:0')
+        button.btn.btn-danger(type='submit' onclick="return confirm('¿Eliminar esta referencia?')") Eliminar
+
+  .page-content
+
+    .row.g-3
+
+      //- ── Columna principal ────────────────────────────
+      .col-lg-8
+
+        .card.mb-3
+          .card-header
+            span.card-title Información general
+            - const tipo = referencia.tipos_fuente ? referencia.tipos_fuente.nombre : '—'
+            - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
+            span.badge-tipo(class=claseTipo)= tipo
+
+          .card-body
+
+            h2(style='font-size:1.2rem;font-weight:700;margin-bottom:.25rem')= referencia.titulo
+            if referencia.subtitulo
+              p(style='color:var(--text-muted);margin-bottom:.75rem') — #{referencia.subtitulo}
+
+            .row.g-2(style='margin-top:.75rem')
+
+              if referencia.anio_publicacion
+                .col-auto
+                  span.badge-tipo.badge-libro Año: #{referencia.anio_publicacion}
+
+              if referencia.idioma
+                .col-auto
+                  span.badge-tipo.badge-web #{referencia.idioma}
+
+              if referencia.doi
+                .col-auto
+                  a(href=`https://doi.org/${referencia.doi}` target='_blank' style='font-size:.75rem;color:var(--blue)') DOI: #{referencia.doi}
+
+              if referencia.url
+                .col-auto
+                  a(href=referencia.url target='_blank' style='font-size:.75rem;color:var(--blue)') 🔗 Enlace externo
+
+            if referencia.resumen
+              div(style='margin-top:1rem')
+                p.field-label Resumen
+                p(style='font-size:.85rem;color:var(--text);line-height:1.65') #{referencia.resumen}
+
+        //- Sub-datos según tipo
+        if referencia.libro
+          .card.mb-3
+            .card-header
+              span.card-title Datos del libro
+            .card-body
+              .row.g-2
+                each par in [['Editorial', referencia.libro.editorial], ['Edición', referencia.libro.numero_edicion], ['Ciudad', referencia.libro.ciudad_publicacion], ['País', referencia.libro.pais_publicacion], ['ISBN-13', referencia.libro.isbn13], ['ISBN-10', referencia.libro.isbn10], ['Total páginas', referencia.libro.total_paginas], ['Volumen', referencia.libro.volumen]]
+                  if par[1]
+                    .col-md-3.col-sm-6
+                      p.field-label= par[0]
+                      p(style='font-size:.85rem')= par[1]
+
+        if referencia.tesi
+          .card.mb-3
+            .card-header
+              span.card-title Datos de la tesis
+            .card-body
+              .row.g-2
+                each par in [['Grado', referencia.tesi.grado], ['Institución', referencia.tesi.institucion], ['Facultad', referencia.tesi.facultad], ['Departamento', referencia.tesi.departamento], ['Ciudad', referencia.tesi.ciudad], ['País', referencia.tesi.pais], ['Director', referencia.tesi.director_tesis], ['Codirector', referencia.tesi.codirector]]
+                  if par[1]
+                    .col-md-4.col-sm-6
+                      p.field-label= par[0]
+                      p(style='font-size:.85rem')= par[1]
+
+        if referencia.articulo_revista
+          .card.mb-3
+            .card-header
+              span.card-title Datos del artículo
+            .card-body
+              .row.g-2
+                each par in [['Revista', referencia.articulo_revista.nombre_revista], ['ISSN', referencia.articulo_revista.issn], ['e-ISSN', referencia.articulo_revista.eissn], ['Volumen', referencia.articulo_revista.volumen], ['Número', referencia.articulo_revista.numero], ['Pág. inicio', referencia.articulo_revista.pagina_inicio], ['Pág. fin', referencia.articulo_revista.pagina_fin], ['Editorial', referencia.articulo_revista.editorial]]
+                  if par[1]
+                    .col-md-3.col-sm-6
+                      p.field-label= par[0]
+                      p(style='font-size:.85rem')= par[1]
+
+        if referencia.pagina_web
+          .card.mb-3
+            .card-header
+              span.card-title Datos de la página web
+            .card-body
+              .row.g-2
+                each par in [['Sitio', referencia.pagina_web.nombre_sitio], ['Fecha publicación', referencia.pagina_web.fecha_publicacion], ['Fecha consulta', referencia.pagina_web.fecha_consulta]]
+                  if par[1]
+                    .col-md-4
+                      p.field-label= par[0]
+                      p(style='font-size:.85rem')= par[1]
+
+      //- ── Columna lateral ─────────────────────────────
+      .col-lg-4
+
+        //- Autores
+        .card.mb-3
+          .card-header
+            span.card-title Autores
+
+          .card-body
+            - const autores = referencia.autors || []
+            if autores.length === 0
+              p(style='font-size:.82rem;color:var(--text-muted)') Sin autores registrados.
+            else
+              each autor in autores
+                .autor-chip(style='margin-bottom:.4rem;display:flex;flex-direction:column;border-radius:6px;padding:.5rem .75rem')
+                  span(style='font-weight:600;font-size:.82rem')
+                    | #{autor.apellido_paterno}#{autor.apellido_materno ? ' '+autor.apellido_materno : ''}, #{autor.nombres}
+                  if autor.referencia_autor
+                    span(style='font-size:.68rem;color:var(--text-muted)') #{autor.referencia_autor.rol_autor} · Orden #{autor.referencia_autor.orden_autor}
+
+        //- Palabras clave
+        .card.mb-3
+          .card-header
+            span.card-title Palabras clave
+
+          .card-body
+            - const palabras = referencia.palabra_claves || []
+            if palabras.length === 0
+              p(style='font-size:.82rem;color:var(--text-muted)') Sin palabras clave.
+            else
+              .autor-list
+                each pc in palabras
+                  span.autor-chip= pc.palabra
+
+        //- Acciones
+        .card
+          .card-body(style='display:flex;flex-direction:column;gap:.6rem')
+            a.btn.btn-gold(href=`/referencias/${referencia.id_referencia}/citar` style='justify-content:center')
+              | 📝 Generar cita
+            a.btn.btn-secondary(href=`/referencias/${referencia.id_referencia}/editar` style='justify-content:center')
+              | ✏️ Editar referencia
+            p(style='font-size:.65rem;color:var(--text-muted);text-align:center;margin:0')
+              | Registrada: #{new Date(referencia.fecha_registro).toLocaleDateString('es-MX')}

@@ -1,0 +1,148 @@
+extends ../layout
+block content
+
+  .topbar
+    .topbar-title
+      | Generar Cita
+      span= referencia.titulo
+    a.btn.btn-secondary(href=`/referencias/${referencia.id_referencia}`) ← Volver
+
+  .page-content
+
+    .row.g-3
+
+      //- ── Columna izquierda: selector de formato ───────
+      .col-lg-5
+
+        .card
+
+          .card-header
+            span.card-title Seleccionar formato
+
+          .card-body
+
+            if error
+              .flash.flash-error= error
+
+            form(action=`/referencias/${referencia.id_referencia}/citar`, method='POST')
+
+              p(style='font-size:.82rem;color:var(--text-muted);margin-bottom:1rem')
+                | Elige el estándar de citación que necesitas para tu trabajo académico.
+
+              .formato-grid
+
+                each fmt in formatos
+                  label.formato-card(
+                    for=`fmt-${fmt.id_formato}`
+                    class=(citaGenerada && citaGenerada.formato && citaGenerada.formato.id_formato === fmt.id_formato ? 'selected' : '')
+                    onclick=`seleccionarFormato(this, ${fmt.id_formato})`
+                  )
+                    input(
+                      type='radio'
+                      name='id_formato'
+                      id=`fmt-${fmt.id_formato}`
+                      value=fmt.id_formato
+                    )
+                    p.formato-name= fmt.nombre
+                    p.formato-desc
+                      if fmt.version
+                        | v#{fmt.version}
+                      if fmt.descripcion
+                        br
+                        | #{fmt.descripcion}
+
+              button.btn.btn-gold(type='submit' style='width:100%;justify-content:center')
+                | Generar cita
+
+        //- Referencia base
+        .card(style='margin-top:1rem')
+          .card-header
+            span.card-title Referencia
+            - const tipo = referencia.tipos_fuente ? referencia.tipos_fuente.nombre : '—'
+            - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
+            span.badge-tipo(class=claseTipo)= tipo
+
+          .card-body
+            p(style='font-weight:600;font-size:.9rem;margin-bottom:.35rem')= referencia.titulo
+            if referencia.subtitulo
+              p(style='font-size:.78rem;color:var(--text-muted);margin-bottom:.35rem')= referencia.subtitulo
+
+            - const autores = referencia.autors || []
+            if autores.length > 0
+              .autor-list(style='margin-top:.5rem')
+                each a in autores
+                  span.autor-chip= `${a.apellido_paterno}, ${a.nombres}`
+
+            if referencia.anio_publicacion
+              p(style='font-size:.75rem;color:var(--text-muted);margin-top:.5rem') Año: #{referencia.anio_publicacion}
+
+      //- ── Columna derecha: resultado y historial ────────
+      .col-lg-7
+
+        //- Cita recién generada
+        if citaGenerada
+          if exito
+            .flash.flash-success= exito
+
+          .card.mb-3
+
+            .card-header
+              span.card-title Cita generada
+              button.btn-copy#btn-copiar-ref(onclick='copiarTexto("ref-completa")') Copiar referencia
+
+            .card-body
+
+              .cita-box
+
+                .cita-formato-tag
+                  | #{citaGenerada.formato.nombre}
+                  if citaGenerada.formato.version
+                    |  · v#{citaGenerada.formato.version}
+
+                p.field-label Cita en texto (parentética o numérica)
+                .d-flex.align-items-center.gap-2.mb-3
+                  .cita-inline= citaGenerada.texto_cita
+                  button.btn-copy(onclick='copiarTexto("cita-inline")') Copiar
+
+                p.field-label Referencia bibliográfica completa
+                .cita-referencia#ref-completa= citaGenerada.texto_referencia_completa
+
+        //- Historial de citas generadas
+        if citasGuardadas && citasGuardadas.length > 0
+
+          .card
+
+            .card-header
+              span.card-title Citas guardadas para esta referencia
+
+            .card-body
+
+              each cita in citasGuardadas
+
+                .cita-card
+
+                  .cita-card-header
+                    .cita-formato-tag(style='margin:0')
+                      | #{cita.formato_citum ? cita.formato_citum.nombre : '—'}
+                    button.btn-copy(
+                      onclick=`copiarTextoDirecto('${cita.texto_referencia_completa.replace(/'/g, "\\'")}');`
+                    ) Copiar
+
+                  .cita-card-body
+
+                    p(style='font-family:\"IBM Plex Mono\",monospace;font-size:.82rem;color:var(--blue-dk);font-weight:600;margin-bottom:.6rem')
+                      = cita.texto_cita
+
+                    p.cita-referencia= cita.texto_referencia_completa
+
+        else if !citaGenerada
+          .card
+            .card-body.empty-state
+              svg(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor')
+                path(stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z')
+              p Selecciona un formato y haz clic en "Generar cita" para obtener la referencia lista para usar.
+
+  //- Texto oculto para copiar
+  textarea#cita-inline(style='position:absolute;left:-9999px;top:-9999px' readonly)
+    if citaGenerada
+      = citaGenerada.texto_cita
