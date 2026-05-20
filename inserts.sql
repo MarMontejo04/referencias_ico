@@ -664,36 +664,1742 @@ INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(129, 1
 INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(130, 170, 1);
  
  -- Temas
- -- MATEMATICAS
-INSERT INTO referencia_tema VALUES(1,1);
-INSERT INTO referencia_tema VALUES(2,2);
-INSERT INTO referencia_tema VALUES(3,3);
-INSERT INTO referencia_tema VALUES(4,5);
-INSERT INTO referencia_tema VALUES(5,7);
-INSERT INTO referencia_tema VALUES(6,8);
-INSERT INTO referencia_tema VALUES(7,23);
-INSERT INTO referencia_tema VALUES(8,24);
+-- ══════════════════════════════════════════════════════════
+--  REFERENCIA_TEMA · Primer Semestre · COMPLETO
+--  Estrategias: numérica | nombre catálogo | todos los temas
+-- ══════════════════════════════════════════════════════════
 
--- PROGRAMACION
-INSERT INTO referencia_tema VALUES(36,14);
-INSERT INTO referencia_tema VALUES(37,15);
-INSERT INTO referencia_tema VALUES(38,16);
-INSERT INTO referencia_tema VALUES(39,53);
-INSERT INTO referencia_tema VALUES(40,54);
-INSERT INTO referencia_tema VALUES(41,97);
-INSERT INTO referencia_tema VALUES(42,98);
-INSERT INTO referencia_tema VALUES(43,111);
+USE referencias_ico;
 
--- SISTEMAS Y REDES
-INSERT INTO referencia_tema VALUES(66,115);
-INSERT INTO referencia_tema VALUES(67,116);
-INSERT INTO referencia_tema VALUES(68,131);
-INSERT INTO referencia_tema VALUES(69,132);
-INSERT INTO referencia_tema VALUES(70,147);
+-- ref=1: Algebra Superior
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 1, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 1, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 1, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 1, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 1, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 1, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
 
--- IA
-INSERT INTO referencia_tema VALUES(86,154);
-INSERT INTO referencia_tema VALUES(87,155);
-INSERT INTO referencia_tema VALUES(88,209);
-INSERT INTO referencia_tema VALUES(89,210);
-INSERT INTO referencia_tema VALUES(90,216);
+-- ref=2: Algebra  
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 2, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 2, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 2, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+
+-- ref=3: Algebra Elemental
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 3, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 3, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 3, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 3, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 3, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 3, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=4: Algebra y geometria: teoria,practica y aplicaciones
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 4, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 4, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 4, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 4, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 4, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 4, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=5: Algebra Superior
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 5, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 5, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 5, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 5, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 5, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=6: Algebra Intermedia
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 6, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 6, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 6, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 6, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 6, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 6, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=7: Algebra
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 7, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 7, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 7, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 7, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 7, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=8: Teoria y Problemas de teoria de conjuntos y temas ofine
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 8, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 8, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 8, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 8, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 8, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 8, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=9: Vive la Probabilidad y Estadística 2.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 9, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=10: Matemáticas discretas.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 10, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 10, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=11: Algebra.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 11, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+
+-- ref=12: Algebra and trigonometry.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 12, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 12, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 12, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 12, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 12, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=13: Álgebra y trigonometría con geometría analítica.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 13, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 13, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 13, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 13, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 13, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=14: Algebra and trigonometry.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 14, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 14, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 14, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 14, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+
+-- ref=15: Writing the History of Mathematics: Its Historical Deve
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 15, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 15, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 15, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 15, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 15, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 15, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=16: Imagine Math. Between Culture and Mathematics.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 16, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 16, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 16, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 16, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 16, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 16, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=17: Tales of Mathematicians and Physicists.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 17, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 17, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 17, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 17, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 17, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 17, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=18: Algebra-Baldor
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 18, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 18, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 18, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 18, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 18, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 18, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=19: Alebra Intermedia
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 19, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 19, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 19, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 19, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 19, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 19, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=20: Algebra para Ingenieros
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 20, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 20, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 20, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 20, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 20, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 20, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=21: Algebra Moderna
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 21, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 21, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 21, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 21, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 21, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 21, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=22: Algebra Universitaria
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 22, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 22, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 22, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 22, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 22, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 22, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=23: Algebra Lineal
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 23, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 23, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 23, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=24: College Algebra
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 24, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 24, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 24, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 24, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 24, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 24, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=25: Intermediate Algebra
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 25, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 25, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 25, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=26: Algebra
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 26, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 26, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 26, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 26, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 26, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 26, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=27: Alegebra Superior
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 27, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 27, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 27, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=28: Fundamentos de los metodos computacionales en algebra l
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 28, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 28, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 28, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=29: Lecciones de algebra
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 29, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 29, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 29, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 29, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 29, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 29, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=30: Algebra de Conjuntos
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 30, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 30, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 30, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 30, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 30, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 30, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=31 tema libre: 'Cálculo vectorial en varias variables' → todos los temas materia 3
+-- ref=31: Cálculo vectorial
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 31, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=32 tema libre: 'Fundamentos del cálculo diferencial e integral' → todos los temas materia 3
+-- ref=32: Cálculo diferencial e integral
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 32, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=33 tema libre: 'Aplicaciones del cálculo en problemas reales (economía, físi' → todos los temas materia 3
+-- ref=33: Cálculo con aplicaciones
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 33, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=34 tema libre: 'Cálculo diferencial de funciones de una variable y sus aplic' → todos los temas materia 3
+-- ref=34: Cálculo diferencial de una variable con aplicaciones
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 34, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=35 tema libre: 'Conceptos básicos e introducción al cálculo vectorial' → todos los temas materia 3
+-- ref=35: Introducción al cálculo vectorial
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 35, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=36 tema libre: 'Cálculo diferencial e integral con enfoque analítico y práct' → todos los temas materia 3
+-- ref=36: Cálculo diferencial e integral
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 36, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=37 tema libre: 'Cálculo avanzado (teoría y técnicas matemáticas superiores)' → todos los temas materia 3
+-- ref=37: Fundamentos de cálculo avanzado
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 37, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=38 tema libre: 'Cálculo de una variable (límites, derivadas e integrales)' → todos los temas materia 3
+-- ref=38: Cálculo de una variable
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 38, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=39 tema libre: 'Historia del desarrollo de las matemáticas' → todos los temas materia 3
+-- ref=39: Historia de las matemáticas
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 39, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=40 tema libre: 'Relación entre matemáticas, cultura y arte' → todos los temas materia 3
+-- ref=40: Matemáticas y cultura
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 40, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=41 tema libre: 'Historias y contribuciones de matemáticos y físicos' → todos los temas materia 3
+-- ref=41: Matemáticos y físicos (historias)
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 41, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=42 tema libre: 'Derivadas y aplicaciones' → todos los temas materia 3
+-- ref=42: Calculus Early Transcendentals
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 42, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=43 tema libre: 'Álgebra lineal' → todos los temas materia 1
+-- ref=43: Linear Algebra and Its Applications
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 43, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 43, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 43, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 43, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 43, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 43, id_tema FROM tema
+    WHERE id_materia = 1 AND numero_tema = 6;
+
+-- ref=44 tema libre: 'Probabilidad básica' → todos los temas materia 17
+-- ref=44: Introduction to Probability
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 44, id_tema FROM tema
+    WHERE id_materia = 17 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 44, id_tema FROM tema
+    WHERE id_materia = 17 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 44, id_tema FROM tema
+    WHERE id_materia = 17 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 44, id_tema FROM tema
+    WHERE id_materia = 17 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 44, id_tema FROM tema
+    WHERE id_materia = 17 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 44, id_tema FROM tema
+    WHERE id_materia = 17 AND numero_tema = 6;
+
+-- ref=45 tema libre: 'Integrales múltiples' → todos los temas materia 3
+-- ref=45: Multivariable Calculus
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 45, id_tema FROM tema
+    WHERE id_materia = 3 AND numero_tema = 7;
+
+-- ref=46 tema libre: 'Lógica y conjuntos' → todos los temas materia 20
+-- ref=46: Discrete Mathematics and Its Applications
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 46, id_tema FROM tema
+    WHERE id_materia = 20 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 46, id_tema FROM tema
+    WHERE id_materia = 20 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 46, id_tema FROM tema
+    WHERE id_materia = 20 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 46, id_tema FROM tema
+    WHERE id_materia = 20 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 46, id_tema FROM tema
+    WHERE id_materia = 20 AND numero_tema = 5;
+
+-- ref=47 tema libre: 'Programación en C++' → todos los temas materia 8
+-- ref=47: C++ How to Program
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 47, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 47, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 47, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 47, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 4;
+
+-- ref=48 tema libre: 'Diseño de algoritmos' → todos los temas materia 23
+-- ref=48: Introduction to Algorithms
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 48, id_tema FROM tema
+    WHERE id_materia = 23 AND numero_tema = 7;
+
+-- ref=49 tema libre: 'Programación en Java' → todos los temas materia 8
+-- ref=49: Java: The Complete Reference
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 49, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 49, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 49, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 49, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 4;
+
+-- ref=50 tema libre: 'Sistemas gestores de bases de datos' → todos los temas materia 18
+-- ref=50: Database System Concepts
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 50, id_tema FROM tema
+    WHERE id_materia = 18 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 50, id_tema FROM tema
+    WHERE id_materia = 18 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 50, id_tema FROM tema
+    WHERE id_materia = 18 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 50, id_tema FROM tema
+    WHERE id_materia = 18 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 50, id_tema FROM tema
+    WHERE id_materia = 18 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 50, id_tema FROM tema
+    WHERE id_materia = 18 AND numero_tema = 6;
+
+-- ref=51 tema libre: 'Desarrollo de software' → todos los temas materia 30
+-- ref=51: Software Engineering
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 51, id_tema FROM tema
+    WHERE id_materia = 30 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 51, id_tema FROM tema
+    WHERE id_materia = 30 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 51, id_tema FROM tema
+    WHERE id_materia = 30 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 51, id_tema FROM tema
+    WHERE id_materia = 30 AND numero_tema = 4;
+
+-- ref=52 tema libre: 'Gestión de procesos' → todos los temas materia 28
+-- ref=52: Operating System Concepts
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 52, id_tema FROM tema
+    WHERE id_materia = 28 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 52, id_tema FROM tema
+    WHERE id_materia = 28 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 52, id_tema FROM tema
+    WHERE id_materia = 28 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 52, id_tema FROM tema
+    WHERE id_materia = 28 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 52, id_tema FROM tema
+    WHERE id_materia = 28 AND numero_tema = 5;
+
+-- ref=53 tema libre: 'Redes de computadoras' → todos los temas materia 33
+-- ref=53: Computer Networking: A Top-Down Approach
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 53, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 53, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 53, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 53, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 53, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 5;
+
+-- ref=54 tema libre: 'Redes de computadoras' → todos los temas materia 33
+-- ref=54: Computer Networking: A Top-Down Approach
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 54, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 54, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 54, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 54, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 54, id_tema FROM tema
+    WHERE id_materia = 33 AND numero_tema = 5;
+
+-- ref=55 tema libre: 'Fundamentos de IA' → todos los temas materia 39
+-- ref=55: Artificial Intelligence: A Modern Approach
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 55, id_tema FROM tema
+    WHERE id_materia = 39 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 55, id_tema FROM tema
+    WHERE id_materia = 39 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 55, id_tema FROM tema
+    WHERE id_materia = 39 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 55, id_tema FROM tema
+    WHERE id_materia = 39 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 55, id_tema FROM tema
+    WHERE id_materia = 39 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 55, id_tema FROM tema
+    WHERE id_materia = 39 AND numero_tema = 6;
+
+-- ref=56 tema libre: 'Aprendizaje automático' → todos los temas materia 61
+-- ref=56: Pattern Recognition and Machine Learning
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 56, id_tema FROM tema
+    WHERE id_materia = 61 AND numero_tema = 7;
+
+-- ref=57 tema libre: 'Criptografía' → todos los temas materia 40
+-- ref=57: Cryptography and Network Security
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 5;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 6;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 57, id_tema FROM tema
+    WHERE id_materia = 40 AND numero_tema = 7;
+
+-- ref=58 tema libre: 'Desarrollo web' → todos los temas materia 25
+-- ref=58: Learning Web Design
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 58, id_tema FROM tema
+    WHERE id_materia = 25 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 58, id_tema FROM tema
+    WHERE id_materia = 25 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 58, id_tema FROM tema
+    WHERE id_materia = 25 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 58, id_tema FROM tema
+    WHERE id_materia = 25 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 58, id_tema FROM tema
+    WHERE id_materia = 25 AND numero_tema = 5;
+
+-- ref=59 tema libre: 'Estructuras de datos en programación' → todos los temas materia 13
+-- ref=59: Data Structures and Algorithms in Java
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 59, id_tema FROM tema
+    WHERE id_materia = 13 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 59, id_tema FROM tema
+    WHERE id_materia = 13 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 59, id_tema FROM tema
+    WHERE id_materia = 13 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 59, id_tema FROM tema
+    WHERE id_materia = 13 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 59, id_tema FROM tema
+    WHERE id_materia = 13 AND numero_tema = 5;
+
+-- ref=60: Como programar en C++
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 60, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=61: Fundamentos de programación.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 61, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 61, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 61, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=62: Introduccion a las Computadoras y a los Sistemas de Inf
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 62, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 62, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 62, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=63: Computer fundamentals and programing in C
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 63, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 63, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 63, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=64: De DOS a Windows: Introduccion  a las Computadoras pers
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 64, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 64, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 64, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=65: Desarrollo del pensamiento analítico y sistémico: guía 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 65, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+
+-- ref=66: 100 problemas resueltos de programación en lenguaje C p
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 66, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 66, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=67: Programación estructurada a fondo: implementación de al
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 67, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 67, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=68: Diseño de algoritmos y su programación en C.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 68, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 68, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=69: El lenguaje de programación C.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 69, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=70: Ansi C a su alcance.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 70, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=71: Algorithms and data structures.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 71, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=72: Programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 72, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 72, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+
+-- ref=73: Programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 73, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 73, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+
+-- ref=74: Programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 74, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+
+-- ref=75: Programacion
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 75, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+
+-- ref=76: Lógica de programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 76, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=77: Introducción a la programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 77, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=78: Programación estructurada : raptor y lenguaje C
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 78, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 78, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=79: Introducción a la programación : algoritmos y su implem
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 79, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=80: Principios de programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 80, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=81: Programación estructurada a fondo : implementación de a
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 81, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 81, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=82: Lógica de programación : solucionario en pseudocódigo :
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 82, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=83: Metodología de la programación : conceptos, lógica e im
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 83, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 83, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+
+-- ref=84: Fundamentos de programación : algoritmos, estructuras d
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 84, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 84, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 84, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=85: Introducción a la programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 85, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=86: Programación en lenguajes estructurados
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 86, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 86, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=87: Fundamentos de programación : piensa en C
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 87, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 87, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=88: Fundamentos de programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 88, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=89: Programming with C
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 89, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=90: Introducción a la programación
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 90, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+
+-- ref=91 tema libre: 'Álgebra y geometría: teoría, práctica y aplicaciones.' → todos los temas materia 2
+-- ref=91: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 91, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 91, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 91, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 91, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 91, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=92 tema libre: 'Trigonometria plana y esférica.' → todos los temas materia 2
+-- ref=92: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 92, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 92, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 92, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 92, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 92, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=93 tema libre: 'Geometry and trigonometry.' → todos los temas materia 2
+-- ref=93: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 93, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 93, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 93, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 93, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 93, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=94 tema libre: 'Álgebra intermedia.' → todos los temas materia 2
+-- ref=94: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 94, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 94, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 94, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 94, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 94, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=95 tema libre: 'Geometría analítica.' → todos los temas materia 2
+-- ref=95: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 95, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 95, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 95, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 95, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 95, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=96 tema libre: 'Geometria elemental.' → todos los temas materia 2
+-- ref=96: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 96, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 96, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 96, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 96, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 96, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=97 tema libre: '' → todos los temas materia 2
+-- ref=97: 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 97, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 97, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 97, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 97, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 4;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 97, id_tema FROM tema
+    WHERE id_materia = 2 AND numero_tema = 5;
+
+-- ref=98: fila vacía en el CSV, omitida
+-- ref=99 tema libre: 'Cibernética' → todos los temas materia 4
+-- ref=99: Computers and the cybernetic society
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 99, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 99, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 99, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=100 tema libre: 'Lenguaje' → todos los temas materia 4
+-- ref=100: Three models for the description of language
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 100, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 100, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 100, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=101 tema libre: 'Lingüística' → todos los temas materia 4
+-- ref=101: The logical structure of linguistic theory
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 101, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 101, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 101, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=102 tema libre: 'Algoritmos' → todos los temas materia 8
+-- ref=102: Algoritmos. Investigación y Ciencia
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 102, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 102, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 102, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 102, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 4;
+
+-- ref=103 tema libre: 'Sistemas' → todos los temas materia 4
+-- ref=103: Architecture of distributed computer systems
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 103, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 103, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 103, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=104 tema libre: 'Sistemas complejos' → todos los temas materia 4
+-- ref=104: Outline of a new approach to the analysis of complex sy
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 104, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 104, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 104, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=105 tema libre: 'Complejidad' → todos los temas materia 4
+-- ref=105: Complex
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 105, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 105, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 105, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=106 tema libre: 'Programación' → todos los temas materia 8
+-- ref=106: A discipline of programming
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 106, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 106, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 106, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 106, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 4;
+
+-- ref=107 tema libre: 'Lógica' → todos los temas materia 8
+-- ref=107: The logic of programming
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 107, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 1;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 107, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 2;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 107, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 3;
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 107, id_tema FROM tema
+    WHERE id_materia = 8 AND numero_tema = 4;
+
+-- ref=108: A first course in computer programming using Pascal
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 108, id_tema FROM tema
+    WHERE id_materia = 4 AND numero_tema = 3;
+
+-- ref=151: Anatomia de la Organización
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 151, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 1;
+
+-- ⚠ ref=152 materia aún sin mapeo: 'Introducción a la ingenieria '
+-- ref=153: Habilidades de Dirección
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 153, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 1;
+
+-- ref=154: Plan de Vida y Carrera
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 154, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 1;
+
+-- ref=155: Teorias de la Organización
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 155, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 1;
+
+-- ref=156: Construcción de Plan de Vida
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 156, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 1;
+
+-- ref=157: Introducción a la ciencia de la computación, De la mani
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 157, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 2;
+
+-- ref=158: teoría de la computación.
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 158, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 2;
+
+-- ref=159: office 2010 Todo Practica
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 159, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 2;
+
+-- ref=160: The secret Guide to computers
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 160, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 2;
+
+-- ref=161: Computers concepts and Uses
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 161, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 2;
+
+-- ref=162: ¿Qué es un software?
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 162, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 2;
+
+-- ref=163: Quiero empezar a usar Linux: guía todo lo que debes sab
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 163, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 3;
+
+-- ref=164: Linux Guia Práctica
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 164, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 3;
+
+-- ref=165: Manual de administración de Linux
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 165, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 3;
+
+-- ref=166: Ubuntu Linux
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 166, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 3;
+
+-- ref=167: Todo sobre Linux
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 167, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 3;
+
+-- ref=168: ¿Qué es un error de software?
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 168, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 4;
+
+-- ref=169: Problemas y sus elementos
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 169, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 4;
+
+-- ref=170: Una Metodología para Resolver problemas de ingenieria
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 170, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 4;
+
+-- ref=171: Sintesis
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 171, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 4;
+
+-- ref=172: Creatividad
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 172, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 4;
+
+-- ref=173: Derecho Informático 
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 173, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=174: Engineering Ethics concepts and Cases
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 174, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=175: Ingenieria sociedad y medio ambiente
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 175, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=176: Ética profesional
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 176, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=177: Responsabilidad social
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 177, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=178: Las tres R
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 178, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=179: LEGISLACIÓN INFORMÁTICA
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 179, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ref=180: ¿Qué es la propiedad intelectual?
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 180, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 5;
+
+-- ══════════════════════════════════════════════════════════
+-- TOTAL: numérico=145 | catálogo=81 | todos_temas=243 | sin_materia=2
+-- ref=152: El pequeño Manual de las teorias de administración (materia con espacio extra corregida)
+  INSERT IGNORE INTO referencia_tema (id_referencia, id_tema)
+    SELECT 152, id_tema FROM tema
+    WHERE id_materia = 5 AND numero_tema = 1;
