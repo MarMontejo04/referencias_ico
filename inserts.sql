@@ -1,150 +1,62 @@
--- ══════════════════════════════════════════════════════════
---  DATOS DE PRUEBA · Sistema de Referencias ICO
---  Ejecutar DESPUÉS del script principal de la BD
--- ══════════════════════════════════════════════════════════
 
 USE referencias_ico;
 
--- ──────────────────────────────────────────────────────────
--- USUARIOS  (password = texto plano, igual que inscripciones_ico)
--- ──────────────────────────────────────────────────────────
 
+-- Alumnos Recopilacion de Excel
 INSERT INTO usuario (nombre, ap_paterno, ap_materno, email, rol, password) VALUES
-('Laura',    'Martínez',  'Soto',     'admin@aragon.unam.mx',         'Administrador', 'admin123'),
-('Carlos',   'Ramírez',   'Vega',     'carlos.ramirez@aragon.unam.mx','Profesor',      'prof456'),
-('Sofía',    'Herrera',   'Luna',     'sofia.herrera@aragon.unam.mx', 'Profesor',      'prof456'),
-('Miguel',   'Torres',    'Ríos',     'miguel.torres@comunidad.unam.mx','Alumno',      'alumno789'),
-('Valeria',  'López',     'Cruz',     'valeria.lopez@comunidad.unam.mx','Alumno',      'alumno789'),
-('Andrés',   'Jiménez',   'Flores',   'andres.jimenez@comunidad.unam.mx','Alumno',     'alumno789');
+('Laura',    'Martínez',  'Soto',     'admin@aragon.unam.mx',         'Administrador', 'admin123');
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Acosta','Avila','Diego Ernesto ','diegoacosta14@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Alamo','Bonola','Aldo','aldoalamo503@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Alcantara','Cruz','Donovan Amaury','amauryalcantara19@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Arteaga ','Crescencio ','Victor Alexis','alexisarteaga03@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Barrera ','Correa','Yolanda Michel','yolandabarrera03@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Carvajal','Solache','Argenis','carvajalsolache1@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Castaneda','Avila','Leonardo Isay','leonardocastaneda27@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Castillo','Muñoz ','Omar Isaias','omarcastillo281@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Garcia','Toro','Alberto','albertogarcia10@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Garcia ','Santiago ','Emiliano ','emilianogarcia18@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Garcia ','Saavedra','Oscar Daniel','danielgarcia97@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Hernandez ','Dominguez','Jessica Daniela','jessicahernandez44@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+(' Hernández','Miranda','Jorge Eduardo','jorgemiranda08@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Hernandez ','Velazquez ','Ariel','Ariel.hernandez89@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Jiménez','Romero','Nayeli Viridiana ','viridianajimenez21@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Juarez','Asbell','Damian','Damianjuarez90@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Lopez','Rivera','Alan Otzar','alanlopez320@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Lorrabaquio','Rodriguez','Joanna Lizbeth','joannalorrabaquio422@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Manzano','Mejía','Itandehui','itandehuimanzano@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Montaño','Mendoza','David Ojier','ojiermendoza93@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Montejo','Padilla','Mariana','marianamontejo25@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Moore','Gonzalez','Alexander Leroy','alexandermoore21@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Ortega','Enriquez','Alejandro','alejandroortega590@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Ortiz','Virgen','Gustavo Adolfo ','gustavoortiz703@aragon.unam.mx', 'Alumno','1234');	
+INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
+('Ramirez','Picazo','Bruno','brunopicazo4@aragon.unam.mx', 'Alumno','1234');	
 
--- ──────────────────────────────────────────────────────────
--- ÁREAS
--- ──────────────────────────────────────────────────────────
- 
-INSERT INTO area (id_area, nombre) VALUES
-(1, 'Matemáticas'),
-(2, 'Programación e Ingeniería de Software'),
-(3, 'Entorno Social'),
-(4, 'Arquitectura de Computadoras'),
-(5, 'Tratamiento de Información'),
-(6, 'Software de Base'),
-(7, 'Redes'),
-(8, 'Interacción Hombre-Máquina');
- 
--- ──────────────────────────────────────────────────────────
--- MATERIAS OBLIGATORIAS
--- ──────────────────────────────────────────────────────────
- 
--- Semestre 1
-INSERT INTO materia (id_area, nombre) VALUES
-(1, 'Álgebra'),
-(1, 'Geometría Analítica'),
-(1, 'Cálculo Diferencial e Integral'),
-(2, 'Computadoras y Programación'),
-(3, 'Introducción a la Ingeniería en Computación'),
- 
--- Semestre 2
-(1, 'Álgebra Lineal'),
-(1, 'Cálculo Vectorial'),
-(2, 'Programación Orientada a Objetos'),
-(3, 'Comunicación'),
-(3, 'Emprendimiento 1'),
-(3, 'Taller de Creatividad e Innovación'),
- 
--- Semestre 3
-(4, 'Electricidad y Magnetismo'),
-(2, 'Estructura de Datos'),
-(1, 'Métodos Numéricos'),
-(1, 'Ecuaciones Diferenciales'),
-(3, 'Emprendimiento 2'),
- 
--- Semestre 4
-(1, 'Probabilidad y Estadística'),
-(5, 'Bases de Datos 1'),
-(3, 'Emprendimiento 3'),
-(1, 'Matemáticas Discretas'),
-(4, 'Dispositivos Electrónicos'),
- 
--- Semestre 5
-(6, 'Lenguajes Formales y Autómatas'),
-(2, 'Diseño y Análisis de Algoritmos'),
-(3, 'Administración de Proyectos'),
-(2, 'Programación Web 1'),
-(4, 'Diseño Lógico'),
- 
--- Semestre 6
-(6, 'Compiladores'),
-(6, 'Sistemas Operativos'),
-(4, 'Diseño de Sistemas Digitales'),
-(2, 'Ingeniería de Software'),
- 
--- Semestre 7
-(5, 'Sistemas de Información'),
-(2, 'Programación Web 2'),
-(7, 'Redes de Computadoras 1'),
-(4, 'Microprocesadores y Microcontroladores'),
- 
--- Semestre 8
-(5, 'Bases de Datos 2'),
-(2, 'Programación Móvil 1'),
-(7, 'Redes de Computadoras 2'),
-(2, 'Habilidades Directivas'),
- 
--- Semestre 9
-(2, 'Inteligencia Artificial'),
-(7, 'Seguridad Informática'),
-(5, 'Minería de Datos');
- 
--- ──────────────────────────────────────────────────────────
--- MATERIAS OPTATIVAS
--- ──────────────────────────────────────────────────────────
- 
-INSERT INTO materia (id_area, nombre) VALUES
-(8, 'Adquisición de Datos'),
-(8, 'Modelado y Simulación'),
-(2, 'Administración de Sistemas Multiusuario'),
-(2, 'Cómputo Distribuido y Paralelo'),
-(5, 'Temas Especiales de Bases de Datos'),
-(2, 'Seminario Ingeniería en Computación'),
-(8, 'Bioingeniería'),
-(3, 'Movilidad 1'),
-(2, 'Temas Especiales de Computación 1'),
-(3, 'Movilidad 2'),
-(1, 'Programación de Videojuegos 1'),
-(5, 'Temas Especiales de Computación 2'),
-(3, 'Movilidad 3'),
-(3, 'Movilidad 4'),
-(1, 'Programación de Videojuegos 2'),
-(8, 'Temas Especiales de Computación 3'),
-(7, 'Temas Especiales de Computación 4'),
-(6, 'Temas Especiales de Programación 1'),
-(5, 'Análisis de Macrodatos'),
-(1, 'Aprendizaje Automático'),
-(1, 'Cómputo en la Nube'),
-(4, 'Internet de las Cosas'),
-(3, 'Movilidad 5'),
-(3, 'Movilidad 6'),
-(2, 'Programación Móvil 2'),
-(2, 'Temas Especiales de Computación 5'),
-(2, 'Temas Especiales de Computación 6'),
-(5, 'Temas Especiales de Hardware'),
-(2, 'Temas Especiales de Programación 2'),
-(7, 'Temas Especiales de Redes'),
-(7, 'Temas Especiales de Seguridad Informática'),
-(3, 'Vinculación Empresarial'),
-(8, 'Visualización'),
-(5, 'Procesamiento Digital de Señales'),
-(5, 'Reconocimiento de Patrones'),
-(3, 'Proyecto Escuela-Industria'),
-(8, 'Instrumentación y Control'),
-(2, 'Graficación por Computadora'),
-(5, 'Procesamiento Digital de Imágenes'),
-(4, 'Robótica'),
-(2, 'Sistemas Expertos');
- 
--- ──────────────────────────────────────────────────────────
--- REFERENCIAS BASE
--- ──────────────────────────────────────────────────────────
+ SELECT COUNT(id_usuario) FROM usuario where rol = 'Alumno';
 
 
 INSERT INTO referencia (id_usuario, id_tipo_fuente, titulo, subtitulo, anio_publicacion, idioma, doi, url, resumen) VALUES

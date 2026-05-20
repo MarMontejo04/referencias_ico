@@ -1,14 +1,17 @@
-import CitaGenerada   from "../models/CitaGenerada.js";
-import FormatoCita   from "../models/FormatoCita.js";
-import Referencia    from "../models/Referencia.js";
-import TipoFuente    from "../models/TipoFuente.js";
-import Autor         from "../models/Autor.js";
-import Libro         from "../models/Libro.js";
-import Tesis         from "../models/Tesis.js";
-import ArticuloRevista from "../models/ArticuloRevista.js";
-import PaginaWeb     from "../models/PaginaWeb.js";
+import {
+  CitaGenerada,
+  FormatoCita,
+  Referencia,
+  TipoFuente,
+  Autor,
+  Libro,
+  Tesis,
+  ArticuloRevista,
+  PaginaWeb,
+} from "../models/index.js";
 
-// ─── Helpers de formato ────────────────────────────────────────────────────────
+
+// Ayudantes para formato
 
 // Ordena autores por orden_autor
 const ordenarAutores = (autores) =>
@@ -66,8 +69,7 @@ const listaAutoresChicago = (autores) => {
   return primero + " et al.";
 };
 
-// ─── Generadores de texto completo por formato ─────────────────────────────────
-
+//Aqui se genera la referencia completa
 const generarAPA = (ref, autores, subtipo, tipo) => {
   const a   = listaAutoresAPA(autores);
   const año = ref.anio_publicacion ? `(${ref.anio_publicacion})` : "(s.f.)";

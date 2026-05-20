@@ -7,7 +7,7 @@ const db = new Sequelize(
   process.env.BD_USUARIO,
   process.env.BD_CLAVE,
   {
-    dialect:'mariadb',
+    dialect: process.env.BD_DIALECT,
     host: process.env.BD_HOST,       
     port: process.env.BD_PORT,       
     pool: {                          

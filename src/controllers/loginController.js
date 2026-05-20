@@ -1,4 +1,7 @@
-import Usuario from "../models/Usuario.js";
+import {
+  Usuario,
+} from "../models/index.js";
+
 
 // GET /  → mostrar formulario de login
 export const mostrarLogin = (req, res) => {

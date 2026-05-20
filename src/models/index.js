@@ -51,7 +51,7 @@ PalabraClave.belongsToMany(Referencia, {
   otherKey: "id_referencia",
 });
 
-// ── Referencia <-> Tema (N:M) — NUEVA ─────────────────────
+// ── Referencia <-> Tema (N:M) ─────────────────────────────
 Referencia.belongsToMany(Tema, {
   through: ReferenciaTema,
   foreignKey: "id_referencia",
@@ -83,12 +83,12 @@ CitaGenerada.belongsTo(Referencia, { foreignKey: "id_referencia" });
 FormatoCita.hasMany(CitaGenerada,  { foreignKey: "id_formato" });
 CitaGenerada.belongsTo(FormatoCita,{ foreignKey: "id_formato" });
 
-// ── Area -> Materia -> Tema ───────────────────────────────
-Area.hasMany(Materia,    { foreignKey: "id_area" });
-Materia.belongsTo(Area,  { foreignKey: "id_area" });
+// ── Area -> Materia -> Tema  (alias explícitos) ───────────
+Area.hasMany(Materia,   { foreignKey: "id_area",    as: "materias" });
+Materia.belongsTo(Area, { foreignKey: "id_area",    as: "area"     });
 
-Materia.hasMany(Tema,    { foreignKey: "id_materia" });
-Tema.belongsTo(Materia,  { foreignKey: "id_materia" });
+Materia.hasMany(Tema,   { foreignKey: "id_materia", as: "temas"    });
+Tema.belongsTo(Materia, { foreignKey: "id_materia", as: "materia"  });
 
 export {
   Usuario, TipoFuente, Referencia,

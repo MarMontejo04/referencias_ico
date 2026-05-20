@@ -1,17 +1,21 @@
-import Referencia    from "../models/Referencia.js";
-import TipoFuente   from "../models/TipoFuente.js";
-import Autor        from "../models/Autor.js";
-import ReferenciaAutor  from "../models/ReferenciaAutor.js";
-import PalabraClave from "../models/PalabraClave.js";
-import ReferenciaPalabra from "../models/ReferenciaPalabra.js";
-import Libro        from "../models/Libro.js";
-import Tesis        from "../models/Tesis.js";
-import ArticuloRevista from "../models/ArticuloRevista.js";
-import PaginaWeb    from "../models/PaginaWeb.js";
-import Area           from "../models/Area.js";
-import Materia        from "../models/Materia.js";
-import Tema           from "../models/Tema.js";
-import ReferenciaTema from "../models/ReferenciaTema.js";
+import {
+  Referencia,
+  TipoFuente,
+  Autor,
+  ReferenciaAutor,
+  PalabraClave,
+  ReferenciaPalabra,
+  Libro,
+  Tesis,
+  ArticuloRevista,
+  PaginaWeb,
+  Area,
+  Materia,
+  Tema,
+  ReferenciaTema,
+  CitaGenerada,
+  FormatoCita,
+} from "../models/index.js";
 
 // ─── Helper: serializa el árbol Area→Materia→Tema a JSON seguro para Pug ──────
 const serializarAreas = (areas) => JSON.stringify(
@@ -49,7 +53,7 @@ const cargarReferencia = (id_referencia) =>
       { model: Tesis        },
       { model: ArticuloRevista },
       { model: PaginaWeb    },
-      { model: Tema, include: [{ model: Materia, include: [{ model: Area }] }] },
+      { model: Tema, include: [{ model: Materia, as: "materia", include: [{ model: Area, as: "area" }] }] },
     ],
   });
 
@@ -115,12 +119,12 @@ export const listarReferencias = async (req, res) => {
         include: [
           { model: TipoFuente },
           { model: Autor, through: { attributes: ["orden_autor", "rol_autor"] } },
-          { model: Tema, include: [{ model: Materia, include: [{ model: Area }] }] },
+          { model: Tema, include: [{ model: Materia, as: "materia", include: [{ model: Area, as: "area" }] }] },
         ],
         order: [["fecha_registro", "DESC"]],
       }),
       Area.findAll({
-        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        include: [{ model: Materia, as: "materias", include: [{ model: Tema, as: "temas", order: [["numero_tema","ASC"]] }] }],
         order: [["nombre", "ASC"]],
       }),
     ]);
@@ -146,7 +150,7 @@ export const mostrarFormularioNueva = async (req, res) => {
     const [tiposFuente, areas] = await Promise.all([
       TipoFuente.findAll(),
       Area.findAll({
-        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        include: [{ model: Materia, as: "materias", include: [{ model: Tema, as: "temas", order: [["numero_tema","ASC"]] }] }],
         order: [["nombre", "ASC"]],
       }),
     ]);
@@ -288,7 +292,7 @@ export const crearReferencia = async (req, res) => {
     const [tiposFuente, areas] = await Promise.all([
       TipoFuente.findAll(),
       Area.findAll({
-        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        include: [{ model: Materia, as: "materias", include: [{ model: Tema, as: "temas", order: [["numero_tema","ASC"]] }] }],
         order: [["nombre", "ASC"]],
       }),
     ]);
@@ -336,7 +340,7 @@ export const mostrarFormularioEditar = async (req, res) => {
       cargarReferencia(id),
       TipoFuente.findAll(),
       Area.findAll({
-        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        include: [{ model: Materia, as: "materias", include: [{ model: Tema, as: "temas", order: [["numero_tema","ASC"]] }] }],
         order: [["nombre", "ASC"]],
       }),
     ]);

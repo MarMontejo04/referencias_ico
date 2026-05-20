@@ -1,6 +1,10 @@
-import Autor     from "../models/Autor.js";
-import Referencia from "../models/Referencia.js";
+import {
+  Autor,
+  Referencia,
+} from "../models/index.js";
 
+
+// ─── GET /autores ──────────────────────────────────────────────────────────────
 export const listarAutores = async (req, res) => {
   try {
     const autores = await Autor.findAll({
@@ -23,6 +27,7 @@ export const listarAutores = async (req, res) => {
   }
 };
 
+// ─── GET /autores/nuevo ────────────────────────────────────────────────────────
 export const mostrarFormularioNuevo = (req, res) => {
   return res.render("autores/nuevo", {
     usuario: req.session.usuario,
@@ -30,6 +35,7 @@ export const mostrarFormularioNuevo = (req, res) => {
   });
 };
 
+// ─── POST /autores ─────────────────────────────────────────────────────────────
 export const crearAutor = async (req, res) => {
   const {
     nombres, apellido_paterno, apellido_materno,
@@ -63,6 +69,7 @@ export const crearAutor = async (req, res) => {
   }
 };
 
+// ─── GET /autores/:id ──────────────────────────────────────────────────────────
 export const verAutor = async (req, res) => {
   const { id } = req.params;
 
@@ -86,6 +93,7 @@ export const verAutor = async (req, res) => {
   }
 };
 
+// ─── GET /autores/:id/editar ───────────────────────────────────────────────────
 export const mostrarFormularioEditar = async (req, res) => {
   const { id } = req.params;
 
@@ -108,6 +116,7 @@ export const mostrarFormularioEditar = async (req, res) => {
   }
 };
 
+// ─── POST /autores/:id/editar ──────────────────────────────────────────────────
 export const actualizarAutor = async (req, res) => {
   const { id } = req.params;
   const {
@@ -138,6 +147,7 @@ export const actualizarAutor = async (req, res) => {
   }
 };
 
+// ─── POST /autores/:id/eliminar ────────────────────────────────────────────────
 export const eliminarAutor = async (req, res) => {
   const { id }  = req.params;
   const { rol } = req.session.usuario;

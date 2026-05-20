@@ -15,6 +15,7 @@ html(lang='es')
         display: flex;
         min-height: 100vh;
       }
+      /* ── Columna izquierda ── */
       .col-info {
         flex: 0 0 46%;
         background-color: var(--blue);
@@ -116,6 +117,7 @@ html(lang='es')
   body
     .login-wrapper
 
+      //- Columna informativa
       .col-info
         .brand
           .brand-badge
@@ -142,6 +144,7 @@ html(lang='es')
             br
             | Para soporte técnico contacta a tu área académica.
 
+      //- Columna de login
       .col-form
         .form-card
 
@@ -181,9 +184,10 @@ html(lang='es')
             button.btn.btn-primary(type='submit', style='width:100%;justify-content:center;padding:.72rem')
               | Iniciar sesión
 
-          p.form-footer-note ¿No tienes cuenta?
-            a(href='/auth/registar')  Registrate
-
           p.form-footer-note FES Aragón · UNAM · #{new Date().getFullYear()}
+
+          p(style='text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:.75rem')
+            | ¿No tienes cuenta?&nbsp;
+            a(href='/auth/registrar' style='color:var(--blue);font-weight:600;text-decoration:none') Regístrate
 
     script(src='/bootstrap/js/bootstrap.bundle.min.js')

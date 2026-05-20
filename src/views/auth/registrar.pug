@@ -11,12 +11,10 @@ html(lang='es')
     link(rel='stylesheet', href='/css/referencias.css')
     style.
       body { background: var(--bg); }
-      .login-wrapper {
-        display: flex;
-        min-height: 100vh;
-      }
+      .login-wrapper { display: flex; min-height: 100vh; }
+
       .col-info {
-        flex: 0 0 46%;
+        flex: 0 0 40%;
         background-color: var(--blue);
         background-image:
           radial-gradient(ellipse at 80% 8%,  rgba(200,168,75,.18) 0%, transparent 55%),
@@ -42,80 +40,77 @@ html(lang='es')
         background: linear-gradient(to bottom, transparent, var(--gold), transparent);
         opacity: .45;
       }
-      .brand {
-        display:flex; align-items:center; gap:.8rem; margin-bottom:2.5rem; position:relative;
-      }
+      .brand { display:flex; align-items:center; gap:.8rem; margin-bottom:2.5rem; position:relative; }
       .brand-badge {
         width:46px; height:46px;
         border: 2px solid var(--gold);
         border-radius:6px;
         display:flex; align-items:center; justify-content:center;
       }
-      .brand-badge span {
-        font-family:'IBM Plex Mono',monospace; font-weight:600;
-        font-size:.78rem; color:var(--gold); letter-spacing:.05em;
-      }
+      .brand-badge span { font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:.78rem; color:var(--gold); }
       .brand-text strong { display:block; font-size:.9rem; font-weight:600; color:#fff; }
       .brand-text small  { font-size:.65rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.1em; }
+
       .info-tag {
         display:inline-block; font-size:.6rem; font-weight:700; letter-spacing:.2em;
         text-transform:uppercase; color:var(--gold);
         border:1px solid rgba(200,168,75,.4); border-radius:2px;
         padding:.2rem .6rem; margin-bottom:1rem;
       }
-      .info-title {
-        font-size:1.85rem; font-weight:700; color:#fff;
-        line-height:1.2; margin-bottom:1.25rem; letter-spacing:-.02em;
-      }
-      .info-sub {
-        font-size:.75rem; font-weight:600; color:rgba(255,255,255,.55);
-        letter-spacing:.12em; text-transform:uppercase; margin-bottom:.6rem;
-      }
-      .info-list { list-style:none; margin-bottom:1.75rem; }
+      .info-title { font-size:1.7rem; font-weight:700; color:#fff; line-height:1.2; margin-bottom:1rem; }
+      .info-list { list-style:none; margin-bottom:1.5rem; }
       .info-list li {
         display:flex; align-items:flex-start; gap:.55rem;
-        font-size:.84rem; color:rgba(255,255,255,.8);
-        padding:.35rem 0; border-bottom:1px solid rgba(255,255,255,.07); line-height:1.4;
+        font-size:.82rem; color:rgba(255,255,255,.8);
+        padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.07); line-height:1.4;
       }
       .info-list li::before {
         content:''; flex-shrink:0; width:5px; height:5px; border-radius:50%;
         background:var(--gold); margin-top:.5rem;
       }
-      .info-footer {
-        margin-top:auto; border-top:1px solid rgba(255,255,255,.1); padding-top:1.25rem;
-      }
+      .info-footer { margin-top:auto; border-top:1px solid rgba(255,255,255,.1); padding-top:1.25rem; }
       .info-footer p { font-size:.65rem; color:rgba(255,255,255,.35); line-height:1.6; }
-      /* ── Columna derecha ── */
+
       .col-form {
         flex:1; background:var(--bg);
         display:flex; flex-direction:column; align-items:center; justify-content:center;
-        padding:3rem 2.5rem; min-height:100vh;
+        padding:2.5rem 2rem;
       }
       .form-card {
-        width:100%; max-width:390px;
+        width:100%; max-width:460px;
         animation: cardIn .45s cubic-bezier(.22,1,.36,1) both;
       }
       @keyframes cardIn {
         from { opacity:0; transform:translateY(18px); }
         to   { opacity:1; transform:translateY(0); }
       }
-      .form-header { margin-bottom:2rem; }
-      .form-header-label {
-        font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
-        color:var(--blue); margin-bottom:.3rem;
+      .form-header { margin-bottom:1.75rem; }
+      .form-header-label { font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--blue); margin-bottom:.3rem; }
+      .form-header-title { font-size:1.45rem; font-weight:700; color:var(--text); line-height:1.2; }
+      .form-header-line  { width:38px; height:3px; background:var(--gold); border-radius:2px; margin-top:.55rem; }
+
+      .rol-grid {
+        display:grid; grid-template-columns:repeat(2,1fr); gap:.5rem; margin-bottom:1.2rem;
       }
-      .form-header-title { font-size:1.55rem; font-weight:700; color:var(--text); line-height:1.2; }
-      .form-header-line {
-        width:38px; height:3px; background:var(--gold); border-radius:2px; margin-top:.55rem;
+      .rol-card {
+        border:2px solid var(--border); border-radius:8px;
+        padding:.65rem .5rem; text-align:center; cursor:pointer;
+        transition:border-color .2s, background .2s;
       }
-      .form-footer-note {
-        text-align:center; font-size:.65rem; color:var(--text-muted);
-        margin-top:1.75rem; letter-spacing:.06em; text-transform:uppercase;
-      }
+      .rol-card:hover { border-color:var(--blue); background:var(--blue-lt); }
+      .rol-card.selected { border-color:var(--blue); background:var(--blue-lt); }
+      .rol-card input { display:none; }
+      .rol-icon  { font-size:1.3rem; display:block; margin-bottom:.2rem; }
+      .rol-label { font-size:.72rem; font-weight:600; color:var(--text); }
+
+      .link-login { text-align:center; font-size:.75rem; color:var(--text-muted); margin-top:1.25rem; }
+      .link-login a { color:var(--blue); font-weight:600; text-decoration:none; }
+      .link-login a:hover { text-decoration:underline; }
 
   body
     .login-wrapper
 
+      //- Columna informativa
       .col-info
         .brand
           .brand-badge
@@ -125,65 +120,113 @@ html(lang='es')
             small FES Aragón · UNAM
 
         div(style='position:relative;flex:1')
-          span.info-tag Sistema Académico
-          h1.info-title Gestor de Referencias Formales
+          span.info-tag Nueva cuenta
+          h1.info-title Únete al Sistema de Referencias
 
-          p.info-sub Antes de comenzar, recuerda:
           ul.info-list
-            li Registra tus fuentes con datos completos para obtener citas correctas.
-            li Soportamos formatos APA 7, IEEE, MLA 9 y Chicago 17.
-            li Puedes registrar libros, tesis, artículos de revista y páginas web.
-            li Las citas generadas quedan guardadas en tu historial personal.
-            li Alumnos y profesores comparten el mismo sistema de acceso.
+            li Registra tus fuentes bibliográficas de forma estructurada.
+            li Genera citas en APA 7, IEEE, MLA 9 y Chicago 17 automáticamente.
+            li Organiza tus referencias por área, materia y tema.
+            li Acceso disponible para alumnos y profesores de FES Aragón.
 
         .info-footer
-          p
-            | Sistema de Gestión de Referencias · FES Aragón · UNAM · #{new Date().getFullYear()}
-            br
-            | Para soporte técnico contacta a tu área académica.
+          p Sistema de Gestión de Referencias · FES Aragón · UNAM · #{new Date().getFullYear()}
 
+      //- Columna de registro
       .col-form
         .form-card
 
           .form-header
-            p.form-header-label Acceso al sistema
-            h2.form-header-title Registrate
+            p.form-header-label Crear cuenta
+            h2.form-header-title Registro de usuario
             .form-header-line
 
           form(action='/auth/registrar', method='POST', novalidate)
 
+            //- Nombre y apellidos
+            .row.g-2.mb-3
+              .col-md-6
+                label.field-label(for='nombre') Nombre(s) *
+                input#nombre.field-input(
+                  type='text'
+                  name='nombre'
+                  placeholder='Nombre(s)'
+                  required
+                )
+              .col-md-6
+                label.field-label(for='ap_paterno') Apellido paterno *
+                input#ap_paterno.field-input(
+                  type='text'
+                  name='ap_paterno'
+                  placeholder='Apellido paterno'
+                  required
+                )
+
             .form-group
-              label.field-label(for='email') Correo electrónico
+              label.field-label(for='ap_materno') Apellido materno
+              input#ap_materno.field-input(
+                type='text'
+                name='ap_materno'
+                placeholder='Apellido materno (opcional)'
+              )
+
+            .form-group
+              label.field-label(for='email') Correo electrónico *
               input#email.field-input.field-mono(
                 type='email'
                 name='email'
                 placeholder='correo@aragon.unam.mx'
-                autocomplete='email'
                 required
               )
 
+            //- Rol
             .form-group
-              label.field-label(for='password') Contraseña
-              input#password.field-input.field-mono(
-                type='password'
-                name='password'
-                placeholder='••••••••'
-                autocomplete='current-password'
-                required
-              )
+              label.field-label Rol *
+              .rol-grid
+                label.rol-card(onclick='seleccionarRol(this, "Alumno")')
+                  input(type='radio' name='rol' value='Alumno' required)
+                  span.rol-icon 🎓
+                  span.rol-label Alumno
+                label.rol-card(onclick='seleccionarRol(this, "Profesor")')
+                  input(type='radio' name='rol' value='Profesor')
+                  span.rol-icon 👨‍🏫
+                  span.rol-label Profesor
+
+            //- Contraseñas
+            .row.g-2.mb-3
+              .col-md-6
+                label.field-label(for='password') Contraseña *
+                input#password.field-input.field-mono(
+                  type='password'
+                  name='password'
+                  placeholder='••••••••'
+                  required
+                )
+              .col-md-6
+                label.field-label(for='confirmar_password') Confirmar *
+                input#confirmar_password.field-input.field-mono(
+                  type='password'
+                  name='confirmar_password'
+                  placeholder='••••••••'
+                  required
+                )
 
             if error
               .flash.flash-error= error
-
             if exito
               .flash.flash-success= exito
 
-            button.btn.btn-primary(type='submit', style='width:100%;justify-content:center;padding:.72rem')
-              | Iniciar sesión
+            button.btn.btn-primary(type='submit' style='width:100%;justify-content:center;padding:.72rem')
+              | Crear cuenta
 
-          p.form-footer-note ¿No tienes cuenta?
-            a(href= '/registar/')  Registrate
-
-          p.form-footer-note FES Aragón · UNAM · #{new Date().getFullYear()}
+          .link-login
+            | ¿Ya tienes cuenta?&nbsp;
+            a(href='/') Iniciar sesión
 
     script(src='/bootstrap/js/bootstrap.bundle.min.js')
+    script.
+      function seleccionarRol(label, valor) {
+        document.querySelectorAll('.rol-card').forEach(c => c.classList.remove('selected'));
+        label.classList.add('selected');
+        label.querySelector('input').checked = true;
+      }
