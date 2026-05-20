@@ -308,6 +308,37 @@ block content
               placeholder='Ej. inteligencia artificial, aprendizaje automático, redes neuronales'
             )
 
+
+          //- ── Área / Materia / Temas ─────────────────────
+          .section-divider
+            h3 Área y temas relacionados
+
+          .row.g-3.mb-3
+
+            .col-md-4
+              .form-group
+                label.field-label(for='sel-area') Área académica
+                select#sel-area.field-select(onchange='cargarMaterias(this.value)')
+                  option(value='') — Seleccionar área —
+                  each area in areas
+                    option(value=area.id_area)= area.nombre
+
+            .col-md-4
+              .form-group
+                label.field-label(for='sel-materia') Materia
+                select#sel-materia.field-select(onchange='cargarTemas(this.value)' disabled)
+                  option(value='') — Primero elige un área —
+
+            .col-md-4
+              .form-group
+                label.field-label Temas (selección múltiple)
+                #temas-container(style='background:var(--bg);border:1.5px solid var(--border);border-radius:6px;padding:.6rem .9rem;min-height:42px;max-height:180px;overflow-y:auto')
+                  p#temas-placeholder(style='font-size:.78rem;color:var(--text-muted);margin:0') Elige una materia primero.
+
+          //- Datos de áreas/materias/temas en JSON para el JS
+          script.
+            window.AREAS_DATA = !{areasJSON};
+
           //- ── Botones ────────────────────────────────────
           hr(style='margin:1.5rem 0; border-color:var(--border)')
 

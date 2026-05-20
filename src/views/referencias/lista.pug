@@ -1,4 +1,5 @@
 extends ../layout
+
 block content
 
   .topbar
@@ -15,56 +16,71 @@ block content
     if exito
       .flash.flash-success= exito
 
+    script.
+      window.AREAS_DATA = !{areasJSON};
+
     .card
 
-      .card-header
+      .card-header(style='flex-wrap:wrap;gap:.75rem')
         span.card-title
-          | #{referencias.length} referencia#{referencias.length !== 1 ? 's' : ''} registrada#{referencias.length !== 1 ? 's' : ''}
-        //- Filtro rápido
-        input#buscar.field-input(
-          type='text'
-          placeholder='Buscar por título o autor...'
-          style='max-width:280px'
-          oninput='filtrarReferencias(this.value)'
-        )
+          | #{referencias.length} referencia#{referencias.length !== 1 ? 's' : ''}
+
+        .d-flex.gap-2.align-items-center(style='flex-wrap:wrap')
+          input#buscar.field-input(
+            type='text'
+            placeholder='Buscar título o autor...'
+            style='width:200px'
+            oninput='aplicarFiltros()'
+          )
+          select#filtro-area.field-select(
+            style='width:165px'
+            onchange='filtrarAreasLista(this.value)'
+          )
+            option(value='') 🏫 Todas las áreas
+            each area in areas
+              option(value=area.id_area)= area.nombre
+          select#filtro-materia.field-select(style='width:165px' disabled onchange='filtrarMateriasLista(this.value)')
+            option(value='') 📖 Todas las materias
+          select#filtro-tema.field-select(style='width:165px' disabled onchange='aplicarFiltros()')
+            option(value='') 📝 Todos los temas
 
       if referencias.length === 0
-        .empty-state
-          svg(xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor')
-            path(stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25')
+        .card-body.empty-state
           p Aún no tienes referencias registradas.
           a.btn.btn-primary(href='/referencias/nueva') Agregar primera referencia
 
       else
         .table-wrap
           table.ref-table#tabla-refs
-
             thead
               tr
                 th Título
                 th Tipo
                 th Autores
+                th Temas
                 th Año
                 th Acciones
-
             tbody
               each ref in referencias
-                tr(data-titulo=ref.titulo.toLowerCase() data-autores=(ref.autors || []).map(a => a.apellido_paterno).join(' ').toLowerCase())
-
-                  //- Título
+                - const temaIds    = (ref.temas || []).map(t => t.id_tema).join(',')
+                - const materiaIds = (ref.temas || []).map(t => t.materia ? t.materia.id_materia : '').filter(Boolean).join(',')
+                - const areaIds    = (ref.temas || []).map(t => t.materia && t.materia.area ? t.materia.area.id_area : '').filter(Boolean).join(',')
+                tr(
+                  data-titulo=ref.titulo.toLowerCase()
+                  data-autores=(ref.autors || []).map(a => a.apellido_paterno).join(' ').toLowerCase()
+                  data-temas=temaIds
+                  data-materias=materiaIds
+                  data-areas=areaIds
+                )
                   td
                     a(href=`/referencias/${ref.id_referencia}` style='color:var(--text);text-decoration:none;font-weight:600')
                       = ref.titulo
                     if ref.subtitulo
                       span(style='display:block;font-size:.74rem;color:var(--text-muted)') — #{ref.subtitulo}
-
-                  //- Tipo de fuente
                   td
                     - const tipo = ref.tipos_fuente ? ref.tipos_fuente.nombre : '—'
                     - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
                     span.badge-tipo(class=claseTipo)= tipo
-
-                  //- Autores
                   td.muted
                     - const autores = ref.autors || []
                     if autores.length === 0
@@ -73,15 +89,24 @@ block content
                       | #{autores[0].apellido_paterno}, #{autores[0].nombres}
                     else
                       | #{autores[0].apellido_paterno} et al.
-
-                  //- Año
+                  td
+                    - const temas = ref.temas || []
+                    if temas.length === 0
+                      span(style='color:var(--text-muted);font-size:.75rem') —
+                    else
+                      .autor-list
+                        each t in temas.slice(0,3)
+                          span.autor-chip(style='font-size:.68rem')
+                            if t.numero_tema
+                              | #{t.numero_tema}. 
+                            | #{t.nombre}
+                        if temas.length > 3
+                          span.autor-chip(style='font-size:.68rem;color:var(--text-muted)') +#{temas.length - 3} más
                   td.muted= ref.anio_publicacion || '—'
-
-                  //- Acciones
                   td
                     .action-group
                       a.btn.btn-secondary.btn-sm(href=`/referencias/${ref.id_referencia}`) Ver
                       a.btn.btn-gold.btn-sm(href=`/referencias/${ref.id_referencia}/citar`) Citar
                       a.btn.btn-secondary.btn-sm(href=`/referencias/${ref.id_referencia}/editar`) Editar
-                      form(action=`/referencias/${ref.id_referencia}/eliminar` method='POST' style='margin:0' onsubmit="return confirm('¿Eliminar esta referencia? Esta acción no se puede deshacer.')")
+                      form(action=`/referencias/${ref.id_referencia}/eliminar` method='POST' style='margin:0' onsubmit="return confirm('¿Eliminar esta referencia?')")
                         button.btn.btn-danger.btn-sm(type='submit') Eliminar

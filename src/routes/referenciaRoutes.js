@@ -6,6 +6,11 @@ import {
   cerrarSesion,
 } from "../controllers/loginController.js";
 
+import{
+  crearUsuario,
+  getUsuario
+} from "../controllers/usuarioController.js"
+
 import {
   requiereLogin,
   listarReferencias,
@@ -39,6 +44,9 @@ const router = express.Router();
 router.get( "/",            mostrarLogin);
 router.post("/auth/login",  iniciarSesion);
 router.post("/auth/logout", cerrarSesion);
+
+router.get("/auth/registrar", getUsuario)
+router.post("/auth/registrar", crearUsuario)
 
 router.get( "/referencias",                  requiereLogin, listarReferencias);
 router.get( "/referencias/nueva",            requiereLogin, mostrarFormularioNueva);

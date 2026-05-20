@@ -3,7 +3,7 @@ html(lang='es')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title ICO — Acceso · Referencias
+    title ICO — Registro · Referencias
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
     link(rel='preconnect', href='https://fonts.googleapis.com')
     link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
@@ -147,10 +147,10 @@ html(lang='es')
 
           .form-header
             p.form-header-label Acceso al sistema
-            h2.form-header-title Iniciar sesión
+            h2.form-header-title Registrate
             .form-header-line
 
-          form(action='/auth/login', method='POST', novalidate)
+          form(action='/auth/registrar', method='POST', novalidate)
 
             .form-group
               label.field-label(for='email') Correo electrónico
@@ -182,7 +182,7 @@ html(lang='es')
               | Iniciar sesión
 
           p.form-footer-note ¿No tienes cuenta?
-            a(href='/auth/registar')  Registrate
+            a(href= '/registar/')  Registrate
 
           p.form-footer-note FES Aragón · UNAM · #{new Date().getFullYear()}
 

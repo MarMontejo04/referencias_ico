@@ -8,6 +8,27 @@ import Libro        from "../models/Libro.js";
 import Tesis        from "../models/Tesis.js";
 import ArticuloRevista from "../models/ArticuloRevista.js";
 import PaginaWeb    from "../models/PaginaWeb.js";
+import Area           from "../models/Area.js";
+import Materia        from "../models/Materia.js";
+import Tema           from "../models/Tema.js";
+import ReferenciaTema from "../models/ReferenciaTema.js";
+
+// ─── Helper: serializa el árbol Area→Materia→Tema a JSON seguro para Pug ──────
+const serializarAreas = (areas) => JSON.stringify(
+  areas.map(a => ({
+    id_area:  a.id_area,
+    nombre:   a.nombre,
+    materias: (a.materias || []).map(m => ({
+      id_materia: m.id_materia,
+      nombre:     m.nombre,
+      temas:      (m.temas || []).map(t => ({
+        id_tema:     t.id_tema,
+        nombre:      t.nombre,
+        numero_tema: t.numero_tema,
+      })),
+    })),
+  }))
+);
 
 // ─── Helper: middleware de sesión ──────────────────────────────────────────────
 export const requiereLogin = (req, res, next) => {
@@ -28,6 +49,7 @@ const cargarReferencia = (id_referencia) =>
       { model: Tesis        },
       { model: ArticuloRevista },
       { model: PaginaWeb    },
+      { model: Tema, include: [{ model: Materia, include: [{ model: Area }] }] },
     ],
   });
 
@@ -87,17 +109,26 @@ export const listarReferencias = async (req, res) => {
     // Los Administradores ven todas; alumnos y profesores ven solo las suyas
     const where = rol === "Administrador" ? {} : { id_usuario };
 
-    const referencias = await Referencia.findAll({
-      where,
-      include: [
-        { model: TipoFuente },
-        { model: Autor, through: { attributes: ["orden_autor", "rol_autor"] } },
-      ],
-      order: [["fecha_registro", "DESC"]],
-    });
+    const [referencias, areas] = await Promise.all([
+      Referencia.findAll({
+        where,
+        include: [
+          { model: TipoFuente },
+          { model: Autor, through: { attributes: ["orden_autor", "rol_autor"] } },
+          { model: Tema, include: [{ model: Materia, include: [{ model: Area }] }] },
+        ],
+        order: [["fecha_registro", "DESC"]],
+      }),
+      Area.findAll({
+        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        order: [["nombre", "ASC"]],
+      }),
+    ]);
 
     return res.render("referencias/lista", {
       referencias,
+      areas,
+      areasJSON: serializarAreas(areas),
       usuario: req.session.usuario,
       error: null,
       exito: null,
@@ -112,10 +143,18 @@ export const listarReferencias = async (req, res) => {
 // ─── GET /referencias/nueva ────────────────────────────────────────────────────
 export const mostrarFormularioNueva = async (req, res) => {
   try {
-    const tiposFuente = await TipoFuente.findAll();
+    const [tiposFuente, areas] = await Promise.all([
+      TipoFuente.findAll(),
+      Area.findAll({
+        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        order: [["nombre", "ASC"]],
+      }),
+    ]);
 
     return res.render("referencias/nueva", {
       tiposFuente,
+      areas,
+      areasJSON: serializarAreas(areas),
       usuario: req.session.usuario,
       error: null,
     });
@@ -234,13 +273,29 @@ export const crearReferencia = async (req, res) => {
       }
     }
 
+    // 5. Temas (checkboxes múltiples → array de ids)
+    const temaIds = [].concat(req.body.temas || []).map(Number).filter(Boolean);
+    for (const id_tema of temaIds) {
+      await ReferenciaTema.findOrCreate({
+        where: { id_referencia: referencia.id_referencia, id_tema },
+      });
+    }
+
     return res.redirect(`/referencias/${referencia.id_referencia}`);
 
   } catch (error) {
     console.error("crearReferencia:", error);
-    const tiposFuente = await TipoFuente.findAll();
+    const [tiposFuente, areas] = await Promise.all([
+      TipoFuente.findAll(),
+      Area.findAll({
+        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        order: [["nombre", "ASC"]],
+      }),
+    ]);
     return res.render("referencias/nueva", {
       tiposFuente,
+      areas,
+      areasJSON: serializarAreas(areas),
       usuario: req.session.usuario,
       error: "Error al guardar la referencia. Revisa los datos.",
     });
@@ -277,8 +332,14 @@ export const mostrarFormularioEditar = async (req, res) => {
   const { id_usuario, rol } = req.session.usuario;
 
   try {
-    const referencia  = await cargarReferencia(id);
-    const tiposFuente = await TipoFuente.findAll();
+    const [referencia, tiposFuente, areas] = await Promise.all([
+      cargarReferencia(id),
+      TipoFuente.findAll(),
+      Area.findAll({
+        include: [{ model: Materia, include: [{ model: Tema, order: [["numero_tema","ASC"]] }] }],
+        order: [["nombre", "ASC"]],
+      }),
+    ]);
 
     if (!referencia) {
       return res.status(404).send("Referencia no encontrada.");
@@ -289,9 +350,16 @@ export const mostrarFormularioEditar = async (req, res) => {
       return res.status(403).send("No tienes permiso para editar esta referencia.");
     }
 
+    // IDs de temas ya asociados (para marcar checkboxes)
+    const temasSeleccionados = (referencia.temas || []).map(t => t.id_tema);
+
     return res.render("referencias/editar", {
       referencia,
       tiposFuente,
+      areas,
+      areasJSON: serializarAreas(areas),
+      temasSeleccionados,
+      temasJSON: JSON.stringify(temasSeleccionados),
       usuario: req.session.usuario,
       error: null,
     });
@@ -371,6 +439,13 @@ export const actualizarReferencia = async (req, res) => {
           id_palabra:    pc.id_palabra,
         });
       }
+    }
+
+    // Actualizar temas: borrar y recrear
+    await ReferenciaTema.destroy({ where: { id_referencia: referencia.id_referencia } });
+    const temaIds = [].concat(req.body.temas || []).map(Number).filter(Boolean);
+    for (const id_tema of temaIds) {
+      await ReferenciaTema.create({ id_referencia: referencia.id_referencia, id_tema });
     }
 
     return res.redirect(`/referencias/${referencia.id_referencia}`);

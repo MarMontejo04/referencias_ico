@@ -218,6 +218,14 @@ CREATE TABLE tema (
         ON DELETE CASCADE
 );
 
+CREATE TABLE referencia_tema (
+    id_referencia INT,
+    id_tema       INT,
+    PRIMARY KEY (id_referencia, id_tema),
+    FOREIGN KEY (id_referencia) REFERENCES referencia(id_referencia) ON DELETE CASCADE,
+    FOREIGN KEY (id_tema)       REFERENCES tema(id_tema)             ON DELETE CASCADE
+);
+
 INSERT INTO tipos_fuente(nombre)
 VALUES
 ('Libro'),

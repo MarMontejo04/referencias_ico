@@ -169,3 +169,199 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+/* ══════════════════════════════════════════════════════════
+   SELECTOR ENCADENADO: Área → Materia → Temas
+══════════════════════════════════════════════════════════ */
+
+/**
+ * Paso 1: el usuario elige un área.
+ * Poblamos el select de materias y reseteamos temas.
+ */
+function cargarMaterias(idArea) {
+  const selMateria    = document.getElementById("sel-materia");
+  const temasContainer = document.getElementById("temas-container");
+  const placeholder    = document.getElementById("temas-placeholder");
+
+  // Resetear materia
+  selMateria.innerHTML = '<option value="">— Seleccionar materia —</option>';
+  selMateria.disabled  = true;
+
+  // Resetear temas
+  if (temasContainer) {
+    temasContainer.innerHTML = '<p id="temas-placeholder" style="font-size:.78rem;color:var(--text-muted);margin:0">Elige una materia primero.</p>';
+  }
+
+  if (!idArea || !window.AREAS_DATA) return;
+
+  const area = window.AREAS_DATA.find(a => String(a.id_area) === String(idArea));
+  if (!area || !area.materias?.length) return;
+
+  area.materias.forEach(m => {
+    const opt = document.createElement("option");
+    opt.value       = m.id_materia;
+    opt.textContent = m.nombre;
+    selMateria.appendChild(opt);
+  });
+
+  selMateria.disabled = false;
+}
+
+/**
+ * Paso 2: el usuario elige una materia.
+ * Mostramos checkboxes de temas (selección múltiple).
+ */
+function cargarTemas(idMateria) {
+  const temasContainer = document.getElementById("temas-container");
+  if (!temasContainer) return;
+
+  temasContainer.innerHTML = "";
+
+  if (!idMateria || !window.AREAS_DATA) {
+    temasContainer.innerHTML = '<p style="font-size:.78rem;color:var(--text-muted);margin:0">Elige una materia primero.</p>';
+    return;
+  }
+
+  // Buscar la materia dentro de todas las áreas
+  let temas = [];
+  for (const area of window.AREAS_DATA) {
+    const mat = area.materias?.find(m => String(m.id_materia) === String(idMateria));
+    if (mat) { temas = mat.temas || []; break; }
+  }
+
+  if (!temas.length) {
+    temasContainer.innerHTML = '<p style="font-size:.78rem;color:var(--text-muted);margin:0">Esta materia no tiene temas registrados.</p>';
+    return;
+  }
+
+  // IDs ya seleccionados (modo edición)
+  const preSeleccionados = window.TEMAS_SELECCIONADOS || [];
+
+  temas.forEach(t => {
+    const label = document.createElement("label");
+    label.style.cssText = "display:flex;align-items:center;gap:.45rem;padding:.3rem 0;font-size:.83rem;cursor:pointer;border-bottom:1px solid var(--border)";
+
+    const cb = document.createElement("input");
+    cb.type    = "checkbox";
+    cb.name    = "temas[]";
+    cb.value   = t.id_tema;
+    cb.checked = preSeleccionados.includes(t.id_tema);
+    cb.style.accentColor = "var(--blue)";
+
+    const num = t.numero_tema ? `<span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text-muted);margin-right:.25rem">${String(t.numero_tema).padStart(2,"0")}.</span>` : "";
+    label.appendChild(cb);
+    label.insertAdjacentHTML("beforeend", num + t.nombre);
+    temasContainer.appendChild(label);
+  });
+}
+
+/**
+ * Al cargar en modo EDICIÓN: si hay temas pre-seleccionados,
+ * auto-seleccionar el área y materia correctas y renderizar los checkboxes.
+ */
+function iniciarSelectorEdicion() {
+  if (!window.TEMAS_SELECCIONADOS?.length || !window.AREAS_DATA) return;
+
+  const primerIdTema = window.TEMAS_SELECCIONADOS[0];
+
+  // Encontrar área y materia del primer tema
+  for (const area of window.AREAS_DATA) {
+    for (const mat of area.materias || []) {
+      const temaEncontrado = mat.temas?.find(t => t.id_tema === primerIdTema);
+      if (temaEncontrado) {
+        // Seleccionar área
+        const selArea = document.getElementById("sel-area");
+        if (selArea) {
+          selArea.value = area.id_area;
+          cargarMaterias(area.id_area);
+        }
+        // Seleccionar materia (pequeño delay para que el DOM se actualice)
+        setTimeout(() => {
+          const selMateria = document.getElementById("sel-materia");
+          if (selMateria) {
+            selMateria.value = mat.id_materia;
+            cargarTemas(mat.id_materia);
+          }
+        }, 50);
+        return;
+      }
+    }
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   FILTRO POR ÁREA / MATERIA / TEMA en lista de referencias
+══════════════════════════════════════════════════════════ */
+
+function aplicarFiltros() {
+  const q        = (document.getElementById("buscar")?.value || "").toLowerCase();
+  const idArea   = document.getElementById("filtro-area")?.value;
+  const idMateria= document.getElementById("filtro-materia")?.value;
+  const idTema   = document.getElementById("filtro-tema")?.value;
+
+  document.querySelectorAll("#tabla-refs tbody tr").forEach(tr => {
+    const titulo   = tr.dataset.titulo   || "";
+    const autores  = tr.dataset.autores  || "";
+    const temasTr  = (tr.dataset.temas   || "").split(",").filter(Boolean);
+    const materias = (tr.dataset.materias|| "").split(",").filter(Boolean);
+    const areas    = (tr.dataset.areas   || "").split(",").filter(Boolean);
+
+    const pasaTexto   = !q       || titulo.includes(q) || autores.includes(q);
+    const pasaArea    = !idArea  || areas.includes(idArea);
+    const pasaMateria = !idMateria || materias.includes(idMateria);
+    const pasaTema    = !idTema  || temasTr.includes(idTema);
+
+    tr.style.display = (pasaTexto && pasaArea && pasaMateria && pasaTema) ? "" : "none";
+  });
+}
+
+function filtrarAreasLista(idArea) {
+  const selMateria = document.getElementById("filtro-materia");
+  const selTema    = document.getElementById("filtro-tema");
+
+  selMateria.innerHTML = '<option value="">— Todas las materias —</option>';
+  selMateria.disabled  = true;
+  selTema.innerHTML    = '<option value="">— Todos los temas —</option>';
+  selTema.disabled     = true;
+
+  if (!idArea || !window.AREAS_DATA) { aplicarFiltros(); return; }
+
+  const area = window.AREAS_DATA.find(a => String(a.id_area) === String(idArea));
+  if (!area) { aplicarFiltros(); return; }
+
+  (area.materias || []).forEach(m => {
+    const opt = document.createElement("option");
+    opt.value = m.id_materia; opt.textContent = m.nombre;
+    selMateria.appendChild(opt);
+  });
+  selMateria.disabled = false;
+  aplicarFiltros();
+}
+
+function filtrarMateriasLista(idMateria) {
+  const selTema = document.getElementById("filtro-tema");
+  selTema.innerHTML = '<option value="">— Todos los temas —</option>';
+  selTema.disabled  = true;
+
+  if (!idMateria || !window.AREAS_DATA) { aplicarFiltros(); return; }
+
+  for (const area of window.AREAS_DATA) {
+    const mat = (area.materias || []).find(m => String(m.id_materia) === String(idMateria));
+    if (mat) {
+      (mat.temas || []).forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id_tema;
+        opt.textContent = (t.numero_tema ? t.numero_tema + ". " : "") + t.nombre;
+        selTema.appendChild(opt);
+      });
+      selTema.disabled = false;
+      break;
+    }
+  }
+  aplicarFiltros();
+}
+
+// Arrancar modo edición si aplica
+document.addEventListener("DOMContentLoaded", () => {
+  iniciarSelectorEdicion();
+});
