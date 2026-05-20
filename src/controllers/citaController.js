@@ -323,6 +323,7 @@ export const mostrarFormularioCita = async (req, res) => {
     console.error("mostrarFormularioCita:", error);
     return res.status(500).send("Error al cargar el generador de citas.");
   }
+  console.log(JSON.stringify(citas, null, 2));
 };
 
 // ─── POST /referencias/:id/citar ──────────────────────────────────────────────

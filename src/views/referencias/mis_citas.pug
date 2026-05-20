@@ -23,7 +23,7 @@ block content
 
       each cita in citas
 
-        - const ref = cita.referencia
+        - const ref = cita.referencium
         - const tipo = ref && ref.tipos_fuente ? ref.tipos_fuente.nombre : '—'
         - const claseTipo = tipo === 'Libro' ? 'badge-libro' : tipo === 'Tesis' ? 'badge-tesis' : tipo === 'Artículo de Revista' ? 'badge-articulo' : 'badge-web'
 
@@ -43,7 +43,7 @@ block content
               button.btn-copy(
                 onclick=`copiarTextoDirecto('${cita.texto_referencia_completa.replace(/'/g, "\\'")}')`
               ) Copiar
-              a.btn.btn-gold.btn-sm(href=`/referencias/${ref ? ref.id_referencia : ''}/citar`) Recitar
+              a.btn.btn-gold.btn-sm(href=`/referencias/${ref.id_referencia }/citar`) Recitar
               form(action=`/mis-citas/${cita.id_cita}/eliminar` method='POST' style='margin:0')
                 button.btn.btn-danger.btn-sm(
                   type='submit'
