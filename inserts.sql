@@ -1,7 +1,6 @@
 
 USE referencias_ico;
 
-
 -- Alumnos Recopilacion de Excel
 INSERT INTO usuario (nombre, ap_paterno, ap_materno, email, rol, password) VALUES
 ('Laura',    'Martínez',  'Soto',     'admin@aragon.unam.mx',         'Administrador', 'admin123');
@@ -56,248 +55,645 @@ INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
 INSERT INTO usuario(nombre, ap_paterno, ap_materno, email, rol, password) VALUES
 ('Ramirez','Picazo','Bruno','brunopicazo4@aragon.unam.mx', 'Alumno','1234');	
 
- SELECT COUNT(id_usuario) FROM usuario where rol = 'Alumno';
+-- Referencias Primer Semestre
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(2, 1, 'Algebra Superior', 1990, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(18, 1, 'Algebra  ', 2013, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(25, 1, 'Algebra Elemental', 2005, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(22, 1, 'Algebra y geometria: teoria,practica y aplicaciones', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Algebra Superior', 1991, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(22, 1, 'Algebra Intermedia', 2000, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(22, 1, 'Algebra', 2008, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(25, 1, 'Teoria y Problemas de teoria de conjuntos y temas ofines', 1991, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Vive la Probabilidad y Estadística 2.', 2013, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(23, 1, 'Matemáticas discretas.', 1990, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(15, 1, 'Algebra.', 2008, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(11, 1, 'Algebra and trigonometry.', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(2, 1, 'Álgebra y trigonometría con geometría analítica.', 2002, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(5, 1, 'Algebra and trigonometry.', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'Writing the History of Mathematics: Its Historical Development.', 2002, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(2, 1, 'Imagine Math. Between Culture and Mathematics.', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'Tales of Mathematicians and Physicists.', 2007, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(7, 1, 'Algebra-Baldor', 2019, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(17, 1, 'Alebra Intermedia', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'Algebra para Ingenieros', 2021, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(20, 1, 'Algebra Moderna', 1990, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(18, 1, 'Algebra Universitaria', 2025, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Algebra Lineal', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(9, 1, 'College Algebra', 2019, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Intermediate Algebra', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(26, 1, 'Algebra', 2024, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(2, 1, 'Alegebra Superior', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Fundamentos de los metodos computacionales en algebra lineal', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Lecciones de algebra', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(15, 1, 'Algebra de Conjuntos', 2020, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(12, 1, 'Cálculo vectorial', 2013, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Cálculo diferencial e integral', 2008, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Cálculo con aplicaciones', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'Cálculo diferencial de una variable con aplicaciones', 2006, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(23, 1, 'Introducción al cálculo vectorial', 2003, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(7, 1, 'Cálculo diferencial e integral', 2007, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(12, 1, 'Fundamentos de cálculo avanzado', 1989, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(20, 1, 'Cálculo de una variable', 2016, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Historia de las matemáticas', 2002, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Matemáticas y cultura', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(9, 1, 'Matemáticos y físicos (historias)', 2007, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Calculus Early Transcendentals', 2025, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Linear Algebra and Its Applications', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(18, 1, 'Introduction to Probability', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Multivariable Calculus', 2017, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Discrete Mathematics and Its Applications', 2019, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'C++ How to Program', 2016, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Introduction to Algorithms', 2009, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(3, 1, 'Java: The Complete Reference', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Database System Concepts', 2019, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(9, 1, 'Software Engineering', 2015, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(9, 1, 'Operating System Concepts', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Computer Networking: A Top-Down Approach', 2017, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Computer Networking: A Top-Down Approach', 2017, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'Artificial Intelligence: A Modern Approach', 2021, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(26, 1, 'Pattern Recognition and Machine Learning', 2006, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(13, 1, 'Cryptography and Network Security', 2016, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Learning Web Design', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(20, 1, 'Data Structures and Algorithms in Java', 2002, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Como programar en C++', 2009, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'Fundamentos de programación.', 2004, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Introduccion a las Computadoras y a los Sistemas de Informacion', 1995, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'Computer fundamentals and programing in C', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(17, 1, 'De DOS a Windows: Introduccion  a las Computadoras personales', 1996, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(17, 1, 'Desarrollo del pensamiento analítico y sistémico: guía práctica para aprender a programar por competencias.', 2012, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(14, 1, '100 problemas resueltos de programación en lenguaje C para ingeniería.', 2017, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(23, 1, 'Programación estructurada a fondo: implementación de algoritmos en C.', 2017, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(18, 1, 'Diseño de algoritmos y su programación en C.', 2013, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'El lenguaje de programación C.', 1991, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(9, 1, 'Ansi C a su alcance.', 1991, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(5, 1, 'Algorithms and data structures.', 1976, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Programación', 2019, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(5, 1, 'Programación', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(22, 1, 'Programación', 2021, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(18, 1, 'Programacion', 1999, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(7, 1, 'Lógica de programación', 2021, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(5, 1, 'Introducción a la programación', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(18, 1, 'Programación estructurada : raptor y lenguaje C', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'Introducción a la programación : algoritmos y su implementación en VB.NET, C#, Java y C++', 2007, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'Principios de programación', 2024, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Programación estructurada a fondo : implementación de algoritmos en C', 2017, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'Lógica de programación : solucionario en pseudocódigo : ejercicios resueltos', 2021, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'Metodología de la programación : conceptos, lógica e implementación', 2022, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(12, 1, 'Fundamentos de programación : algoritmos, estructuras de datos y objetos', 2020, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(26, 1, 'Introducción a la programación', 2011, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'Programación en lenguajes estructurados', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'Fundamentos de programación : piensa en C', 2006, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Fundamentos de programación', 2006, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Programming with C', 2004, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(12, 1, 'Introducción a la programación', 2005, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(7, 1, 'Computers and the cybernetic society', 1956, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Three models for the description of language', 1956, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(7, 1, 'The logical structure of linguistic theory', 1956, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Algoritmos. Investigación y Ciencia', 1977, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(7, 1, 'Architecture of distributed computer systems', 1979, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(17, 1, 'Outline of a new approach to the analysis of complex systems and decision process', 1989, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(20, 1, 'Complex', 1986, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'A discipline of programming', 1979, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(3, 1, 'The logic of programming', 1984, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'A first course in computer programming using Pascal', 1982, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Anatomia de la Organización', 1997, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(13, 1, 'El pequeño Manual de las teorias de administración', 2015, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Habilidades de Dirección', 2003, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(8, 1, 'Plan de Vida y Carrera', 2011, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(14, 1, 'Teorias de la Organización', 1977, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(17, 1, 'Construcción de Plan de Vida', 2018, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Introducción a la ciencia de la computación, De la manipulación de datos a la teoria de la computación', 2003, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(11, 1, 'teoría de la computación.', 2008, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(5, 1, 'office 2010 Todo Practica', 2010, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(21, 1, 'The secret Guide to computers', 1993, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(11, 1, 'Computers concepts and Uses', 1988, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(14, 1, '¿Qué es un software?',null, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'Quiero empezar a usar Linux: guía todo lo que debes saber y primeros pasos', 2022, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(22, 1, 'Linux Guia Práctica', 2009, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(3, 1, 'Manual de administración de Linux', 2007, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(11, 1, 'Ubuntu Linux', 2010, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(24, 1, 'Todo sobre Linux', 1999, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(22, 1, '¿Qué es un error de software?', 2024, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(19, 1, 'Problemas y sus elementos', null, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(10, 1, 'Una Metodología para Resolver problemas de ingenieria', 2020, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Sintesis', 2025, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(25, 1, 'Creatividad', 2025, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(20, 1, 'Derecho Informático ', 2004, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'Engineering Ethics concepts and Cases', 2014, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(20, 1, 'Ingenieria sociedad y medio ambiente', 1994, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(4, 1, 'Ética profesional', 2026, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(25, 1, 'Responsabilidad social', 2025, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(6, 1, 'Las tres R', 2025, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(16, 1, 'LEGISLACIÓN INFORMÁTICA', 2015, 'Español');
+INSERT INTO referencia(id_usuario, id_tipo_fuente, titulo, anio_publicacion, idioma) VALUES(9, 1, '¿Qué es la propiedad intelectual?', null, 'Español');
 
+-- Referencia Libros Primer semestre
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(1, 'Editorial Trillas', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(2, 'Prentice Hall, Pearson', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(3, 'CECSA', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(4, 'Editorial Cientifica Universitaria', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(5, 'UTHEA, Grupo Noriega Editores', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(6, 'Thomson', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(7, 'Limusa', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(8, 'McGrawHill.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(9, 'Editorial Progreso, S.A. de C.V.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(10, 'Prentice- Hall.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(11, 'Alpha Science International.', 'Oxford');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(12, 'Pearson.', 'New Jersey');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(13, 'International Thomson.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(14, 'Brooks and Colle, Cengage.', 'EUA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(15, 'Springer.', 'Switzerland');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(16, 'Springer.', 'Italia');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(17, 'Springer.', 'New York');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(18, 'Grupo Editorial Patria', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(19, 'Pearson.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(20, 'Garcia Marota Editores', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(21, 'Editorial Trillas', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(22, 'Universidad Nacional Autonoma de Yucatan', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(23, 'McGraw Hil Interamericana', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(24, 'Pearson.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(25, 'Pearson.', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(26, 'N/A', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(27, 'Fomento Editorial', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(28, 'Fomento Editorial', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(29, 'UNAM', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(30, 'FAcultad de Estudios Superiores Zaragoza', 'Mexico');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(31, 'Pearson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(32, 'Limusa', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(33, 'Springer', 'New York');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(34, 'Thomson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(35, 'Thomson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(36, 'Cengage Learning', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(37, 'Limusa', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(38, 'Pearson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(39, 'Birkhäuser', 'Alemania ');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(40, 'Springer', 'Italia');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(41, 'Springer', 'New York');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(42, 'Cengage Learning', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(43, 'Pearson', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(44, 'American Mathematical Society', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(45, 'Cengage Learning', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(46, 'McGraw-Hill', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(47, 'Pearson', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(48, 'MIT Press', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(49, 'McGraw-Hill', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(50, 'McGraw-Hill', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(51, 'Pearson', 'Reino Unido');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(52, 'Wiley', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(53, 'Pearson', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(54, 'Pearson', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(55, 'Pearson', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(56, 'Springer', 'Alemania ');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(57, 'Pearson', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(58, 'O''Reilly Media', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(59, 'Sams Publishing', 'Estados Unidos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(60, 'Pearson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(61, 'N/A', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(62, 'Prentice Hall', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(63, 'N/A', 'India');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(64, 'Random House Reference', 'UE');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(65, 'N/A', 'Colombia');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(66, 'Ediciones Parainfo', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(67, 'Alfaomega', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(68, 'Alfaomega', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(69, 'Prentice Hall', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(70, 'McGraw Hill', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(71, 'Prentice Hall', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(72, 'Síntesis', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(73, 'Ra-Ma', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(74, 'Paraninfo', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(75, 'N/A', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(76, 'Ediciones de la U', 'Colombia');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(77, 'Grupo Editorial Patria', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(78, 'Marcombo', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(79, 'Alfaomega', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(80, 'Alfaomega', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(81, 'Alfaomega', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(82, 'Ediciones de la U', 'Colombia');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(83, 'Alpha Editorial', 'Colombia');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(84, 'McGraw Hill', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(85, 'Universitat de les illes balears', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(86, 'Ra-Ma', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(87, 'Pearson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(88, 'Alfaomega', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(89, 'McGraw Hill', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(90, 'Anaya Multimedia', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(91, 'Chapman & Hall', 'Reino Unido');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(92, 'IRE Transactions', 'EE.UU.');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(93, 'Plenum Press', 'EE.UU.');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(94, 'Scientific American', 'EE.UU.');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(95, 'IEEE', 'Canadá');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(96, 'IEEE', 'EE.UU.');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(97, 'Addison-Wesley', 'EE.UU.');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(98, 'Prentice Hall', 'Países Bajos');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(99, 'Prentice Hall', 'Canadá');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(100, 'Addison-Wesley', 'Hungría');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(101, 'Ediciones:Machi', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(102, 'Trillas', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(103, 'Thompson', 'Espàña');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(104, 'Trillas', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(105, 'Trillas', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(106, 'N/A', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(107, 'Thomson', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(108, 'Cengage Learning', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(109, 'Alfa Omega', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(110, 'S/E', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(111, 'Prenrtice Hall', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(112, 'N/A', 'N/A');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(113, 'N/A', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(114, 'AlfaOmega', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(115, 'McGraw Hill', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(116, 'RA-MA', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(117, 'Data Backer', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(118, 'N/A', 'España');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(119, 'N/A', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(120, 'N/A', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(121, 'Editorial Etece', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(122, 'Editorial Etece', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(123, 'McGraw-Hill.', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(124, 'Wadsworth Publishing.', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(125, 'Limusa', 'México');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(126, 'Editorial Etece', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(127, 'Editorial Etece', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(128, 'Editorial Etece', 'Argentina');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(129, 'N/A', 'USA');
+INSERT INTO libro(id_referencia, editorial, pais_publicacion) VALUES(130, 'N/A', 'Suiza');
 
-INSERT INTO referencia (id_usuario, id_tipo_fuente, titulo, subtitulo, anio_publicacion, idioma, doi, url, resumen) VALUES
--- Libros
-(2, 1, 'Database System Concepts',
-        'Seventh Edition',
-        2020, 'Inglés', '10.1145/3183713', NULL,
-        'Texto clásico sobre fundamentos de bases de datos relacionales, SQL, transacciones y sistemas distribuidos.'),
+-- Autores Primer Semestre
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Cardenas', 'Humberto');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Elena De', 'Oteyza');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Gordon', 'Fuller');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Salvador', 'Gigena');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Henry', 'Hall');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Jerome', 'Kaufmann');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Charles', 'Lehmann');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Seymour', 'Lipschutz');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Genaro Mariscal', 'Landin');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Kenneth', 'Ross');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Sahai', 'Vivet');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Vikais', 'Bist');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Michael', 'Sullivan');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Earl', 'Swokowski');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Dennis', 'Zill');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Jacqueline', 'Dewar');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Joseph', 'Dauben');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Christoph', 'Scriba');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Michele', 'Emmer');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Simon', 'Gindikin');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Aurelio Dr', 'Baldor');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Allen', 'Anegl');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Dennis', 'Runde');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Guiomar', 'Ruiz');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Israel', 'Nathan');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Carlos', 'Jacob');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Stanley', 'Grossman');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Robert', 'Blitzer');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Margaret', 'Lial');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Biblioteca de la Facultad de Ciencias', 'Matematicas');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Gomez', 'Laveaga');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Yuri', 'Nikolaevich');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Facultad de', 'Ingenieria');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Tomas', 'Vargas');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Antonio', 'Zamora');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S.', 'Colley');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('W.', 'Granville');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('P.', 'Lax');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S. I.', 'López');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('B.', 'Mena');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J.', 'Stewart');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Taylor', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('A.', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Mann', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('W.', 'R.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('G.', 'Thomas');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Dauben', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J.', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Scriba', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J.', 'C.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('M.', 'Emmer');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S.', 'Gindikin');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('James', 'Stewart');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('David C.', 'Lay');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Dimitri', 'Panchenko');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Ron', 'Larson');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Kenneth H.', 'Rosen');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Paul', 'Deitel');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Harvey', 'Deitel');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Thomas H.', 'Cormen');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Charles E.', 'Leiserson');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Ronald L.', 'Rivest');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Clifford', 'Stein');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Herbert', 'Schildt');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Abraham', 'Silberschatz');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Henry F.', 'Korth');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S.', 'Sudarshan');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Ian', 'Sommerville');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Abraham', 'Silberschatz');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Peter Baer', 'Galvin');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Greg', 'Gagne');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('James F.', 'Kurose');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Keith W.', 'Ross');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('James F.', 'Kurose');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Keith W.', 'Ross');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Stuart', 'Russell');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Peter', 'Norvig');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Christopher M.', 'Bishop');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('William', 'Stallings');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Jennifer Niederst', 'Robbins');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Robert', 'Lafore');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('M.', 'Deitel H.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('E.', 'Peñaloza R.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('L.', 'Long');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('D.', 'Pradip');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J', 'Restrepo.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('L.', 'Zapata');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('I.', 'Alvarado');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('P', 'Sznajdleder');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('A.', 'Méndez.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('B.', 'Kernighan');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('H.', 'Schildt');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('N.', 'Wirth');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Mario', 'Dorrego Martín');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Juan Carlos', 'Moreno Pérez');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Alfonso Jiménez', 'Marín');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Francisco Manuel Pérez', 'Montes');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Javier', 'Oliver');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Jaume', 'Devesa');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Pedro', 'Alonso');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Omar Iván Trejos', 'Buriticá');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Mihaela Juganaru', 'Mathieu');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Edgar Danilo Domínguez', 'Vera');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Felipe', 'Ramírez');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Camilo Chacón', 'Sartori');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Pablo Augusto', 'Sznajdleder');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Omar Iván Trejos', 'Bruriticá');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Enrique Gómez', 'Jiménez');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Roy Aguilera', 'Jinesta');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Luis Joyanes', 'Aguilar');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('María J. Abásolo', 'Guerrero');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Francisco J. Perales', 'López');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Juan Carlos Moreno', 'Pérez');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Osvalo Cairó', 'Batisttutti');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Manuel Santos', 'González');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Ismael Patiño', 'Cortés');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Raúl Carrasco', 'Vallinot');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('coordinador', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('José Luis Raya', 'Cabrera');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Byron S.', 'Gottfried');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Francisco Charte', 'Ojeda');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('W. R.', 'Ashby');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Noam', 'Chomsky');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Noam', 'Chomsky');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Donald', 'Knuth');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('G. V.', 'Bochmann');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('L. A.', 'Zadeh');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('A. V.', 'Aho');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Edsger', 'Dijkstra');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('E. C. R.', 'Hehner');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('E. A.', 'Kelemen');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S', 'Lazatti');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J', 'McGrath');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('W', 'Rees');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Elizondo', 'Tovar');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('W', 'Sexton');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Uribe', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('G.', 'D.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('López', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('F.', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('BA', 'Forouzan');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J', 'Parsons');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Peña', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('R.', 'P.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Pérez', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('A.', 'D.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('R.', 'Walter');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('M.', 'Sumner');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Anonimo', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Yúbal', 'Fernández');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Sánchez', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S.', 'P.');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('García', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('O.', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('S.', 'Shah');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('O. M.', 'Serrat');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('M.', 'Wielsch');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Anonimo', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Anonimo', '-');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Alejandro Santa', 'Cruz');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Equipo', 'etece');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Equipo', 'etece');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('V. J.', 'Tellez');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('C.', 'Harris');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('J.', 'Viqueira');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Equipo', 'etece');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('equipo', 'etece');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('equipo', 'etece');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('Hilda', 'Lopez');
+INSERT INTO autor(nombres, apellido_paterno) VALUES('SA', '-');
 
-(2, 1, 'Artificial Intelligence: A Modern Approach',
-        'Fourth Edition',
-        2021, 'Inglés', NULL, NULL,
-        'Referencia estándar en IA; cubre búsqueda, aprendizaje automático, lógica y agentes racionales.'),
+-- Relacion Referencia-autor
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(1, 1, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(2, 2, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(3, 3, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(4, 4, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(5, 5, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(6, 6, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(7, 7, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(8, 8, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(9, 9, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(10, 10, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(11, 11, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(11, 12, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(12, 13, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(13, 14, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(14, 15, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(14, 16, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(15, 17, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(15, 18, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(16, 19, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(17, 20, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(18, 21, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(19, 22, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(19, 23, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(20, 24, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(21, 25, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(22, 26, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(23, 27, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(24, 28, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(25, 29, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(26, 30, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(27, 31, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(28, 32, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(29, 33, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(30, 34, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(30, 35, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(31, 36, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(32, 37, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(33, 38, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(34, 39, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(35, 40, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(36, 41, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(37, 42, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(37, 43, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(37, 44, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(37, 45, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(38, 46, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(39, 47, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(39, 48, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(39, 49, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(39, 50, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(40, 51, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(41, 52, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(42, 53, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(43, 54, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(44, 55, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(45, 56, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(46, 57, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(47, 58, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(47, 59, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(48, 60, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(48, 61, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(48, 62, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(48, 63, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(49, 64, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(50, 65, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(50, 66, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(50, 67, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(51, 68, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(52, 69, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(52, 70, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(52, 71, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(53, 72, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(53, 73, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(54, 74, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(54, 75, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(55, 76, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(55, 77, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(56, 78, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(57, 79, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(58, 80, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(59, 81, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(60, 82, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(61, 83, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(62, 84, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(63, 85, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(64, 86, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(65, 87, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(66, 88, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(67, 89, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(68, 90, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(69, 91, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(70, 92, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(71, 93, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(72, 94, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(73, 95, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(74, 96, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(74, 97, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(75, 98, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(75, 99, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(75, 100, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(76, 101, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(77, 102, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(78, 103, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(79, 104, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(80, 105, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(81, 106, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(82, 107, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(83, 108, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(83, 109, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(84, 110, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(85, 111, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(85, 112, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(86, 113, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(87, 114, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(88, 115, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(88, 116, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(88, 117, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(88, 118, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(88, 119, 5);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(89, 120, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(90, 121, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(91, 122, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(92, 123, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(93, 124, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(94, 125, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(95, 126, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(96, 127, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(97, 128, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(98, 129, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(99, 130, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(100, 131, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(101, 132, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(102, 133, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(103, 134, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(104, 135, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(105, 136, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(106, 137, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(106, 138, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(106, 139, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(106, 140, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(107, 141, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(108, 142, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(109, 143, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(109, 144, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(109, 145, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(109, 146, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(110, 147, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(111, 148, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(112, 149, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(113, 150, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(114, 151, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(114, 152, 2);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(114, 153, 3);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(114, 154, 4);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(115, 155, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(116, 156, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(117, 157, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(118, 158, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(119, 159, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(120, 160, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(121, 161, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(122, 162, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(123, 163, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(124, 164, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(125, 165, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(126, 166, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(127, 167, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(128, 168, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(129, 169, 1);
+INSERT INTO referencia_autor(id_referencia, id_autor, orden_autor) VALUES(130, 170, 1);
+ 
+ -- Temas
+ -- MATEMATICAS
+INSERT INTO referencia_tema VALUES(1,1);
+INSERT INTO referencia_tema VALUES(2,2);
+INSERT INTO referencia_tema VALUES(3,3);
+INSERT INTO referencia_tema VALUES(4,5);
+INSERT INTO referencia_tema VALUES(5,7);
+INSERT INTO referencia_tema VALUES(6,8);
+INSERT INTO referencia_tema VALUES(7,23);
+INSERT INTO referencia_tema VALUES(8,24);
 
-(3, 1, 'Computer Networks',
-        'Fifth Edition',
-        2011, 'Inglés', NULL, NULL,
-        'Descripción detallada de los modelos OSI y TCP/IP, protocolos de red y tecnologías inalámbricas.'),
+-- PROGRAMACION
+INSERT INTO referencia_tema VALUES(36,14);
+INSERT INTO referencia_tema VALUES(37,15);
+INSERT INTO referencia_tema VALUES(38,16);
+INSERT INTO referencia_tema VALUES(39,53);
+INSERT INTO referencia_tema VALUES(40,54);
+INSERT INTO referencia_tema VALUES(41,97);
+INSERT INTO referencia_tema VALUES(42,98);
+INSERT INTO referencia_tema VALUES(43,111);
 
-(4, 1, 'Investigación de Operaciones',
-        'Novena Edición',
-        2012, 'Español', NULL, NULL,
-        'Programación lineal, redes, teoría de colas y toma de decisiones bajo incertidumbre.'),
+-- SISTEMAS Y REDES
+INSERT INTO referencia_tema VALUES(66,115);
+INSERT INTO referencia_tema VALUES(67,116);
+INSERT INTO referencia_tema VALUES(68,131);
+INSERT INTO referencia_tema VALUES(69,132);
+INSERT INTO referencia_tema VALUES(70,147);
 
--- Tesis
-(4, 2, 'Optimización de consultas SQL en bases de datos distribuidas mediante índices adaptativos',
-        NULL,
-        2023, 'Español', NULL, NULL,
-        'Propuesta de un algoritmo de indexación adaptativa para reducir el tiempo de respuesta en SGBD distribuidos.'),
-
-(5, 2, 'Detección de intrusos en redes IoT utilizando redes neuronales convolucionales',
-        NULL,
-        2024, 'Español', NULL, NULL,
-        'Sistema de detección de anomalías en tráfico de red IoT con CNN, alcanzando 97.3% de precisión.'),
-
--- Artículos de revista
-(6, 3, 'Attention Is All You Need',
-        NULL,
-        2017, 'Inglés', '10.48550/arXiv.1706.03762', 'https://arxiv.org/abs/1706.03762',
-        'Introduce la arquitectura Transformer basada únicamente en mecanismos de atención, sin recurrencia ni convoluciones.'),
-
-(3, 3, 'Aplicación de algoritmos genéticos para la asignación óptima de horarios en instituciones educativas',
-        NULL,
-        2022, 'Español', '10.22201/fi.25940732e.2022.23.3', NULL,
-        'Propone un AG para resolver el problema de timetabling en universidades públicas mexicanas.'),
-
--- Páginas web
-(2, 4, 'Documentación oficial de Sequelize ORM',
-        NULL,
-        2024, 'Inglés', NULL, 'https://sequelize.org/docs/v6/',
-        'Referencia completa de la API de Sequelize v6 para Node.js, incluyendo modelos, asociaciones y migraciones.'),
-
-(5, 4, 'MDN Web Docs: Introducción a las bases de datos',
-        NULL,
-        2023, 'Español', NULL, 'https://developer.mozilla.org/es/docs/Learn/Server-side/First_steps/Introduction',
-        'Artículo introductorio de Mozilla sobre bases de datos del lado del servidor para desarrollo web.');
-
--- ──────────────────────────────────────────────────────────
--- LIBROS  (id_referencia 1-4)
--- ──────────────────────────────────────────────────────────
-
-INSERT INTO libro (id_referencia, isbn13, isbn10, editorial, ciudad_publicacion, pais_publicacion, numero_edicion, total_paginas, volumen) VALUES
-(1, '978-1-260-08450-4', NULL,        'McGraw-Hill Education', 'Nueva York', 'Estados Unidos', 7, 1376, NULL),
-(2, '978-0-13-468599-1', NULL,        'Pearson',               'Hoboken',    'Estados Unidos', 4, 1132, NULL),
-(3, '978-0-13-212695-3', '0-13-212695-2', 'Pearson Prentice Hall', 'Upper Saddle River', 'Estados Unidos', 5, 960, NULL),
-(4, '978-607-32-1767-4', NULL,        'Pearson Educación',     'Ciudad de México', 'México', 9, 824, NULL);
-
--- ──────────────────────────────────────────────────────────
--- TESIS  (id_referencia 5-6)
--- ──────────────────────────────────────────────────────────
-
-INSERT INTO tesis (id_referencia, grado, institucion, facultad, departamento, ciudad, pais, director_tesis, total_paginas) VALUES
-(5, 'Maestria',     'Universidad Nacional Autónoma de México', 'FES Aragón', 'Ingeniería en Computación', 'Ciudad de México', 'México', 'Dr. Roberto Sánchez Medina', 112),
-(6, 'Licenciatura', 'Universidad Nacional Autónoma de México', 'FES Aragón', 'Ingeniería en Computación', 'Ciudad de México', 'México', 'Dra. Claudia Fuentes Ramos',  98);
-
--- ──────────────────────────────────────────────────────────
--- ARTÍCULOS DE REVISTA  (id_referencia 7-8)
--- ──────────────────────────────────────────────────────────
-
-INSERT INTO articulo_revista (id_referencia, nombre_revista, issn, volumen, numero, pagina_inicio, pagina_fin, editorial) VALUES
-(7, 'Advances in Neural Information Processing Systems (NeurIPS)', NULL, '30', NULL, '5998', '6008', 'Curran Associates'),
-(8, 'Ingeniería, Investigación y Tecnología (UNAM)',               '2594-0732', '23', '3', '1', '14',   'Facultad de Ingeniería UNAM');
-
--- ──────────────────────────────────────────────────────────
--- PÁGINAS WEB  (id_referencia 9-10)
--- ──────────────────────────────────────────────────────────
-
-INSERT INTO pagina_web (id_referencia, nombre_sitio, fecha_consulta, fecha_publicacion) VALUES
-(9,  'Sequelize Documentation', '2025-01-10', '2024-11-01'),
-(10, 'MDN Web Docs',            '2025-03-05', '2023-08-15');
-
--- ──────────────────────────────────────────────────────────
--- REFERENCIA_AUTOR
--- ──────────────────────────────────────────────────────────
-
--- Ref 1: Database System Concepts → Silberschatz, Korth, Sudarshan
-INSERT INTO referencia_autor VALUES (1, 1, 1, 'Autor'), (1, 2, 2, 'Autor'), (1, 3, 3, 'Autor');
-
--- Ref 2: AI Modern Approach → Russell, Norvig
-INSERT INTO referencia_autor VALUES (2, 4, 1, 'Autor'), (2, 5, 2, 'Autor');
-
--- Ref 3: Computer Networks → Tanenbaum, Wetherall
-INSERT INTO referencia_autor VALUES (3, 6, 1, 'Autor'), (3, 7, 2, 'Autor');
-
--- Ref 4: Investigación de Operaciones → Taha
-INSERT INTO referencia_autor VALUES (4, 8, 1, 'Autor');
-
--- Ref 5: Tesis maestría → Miguel Torres (id_usuario=4, no es autor registrado, usamos autor interno)
-INSERT INTO referencia_autor VALUES (5, 9, 1, 'Autor');   -- Ana Luisa Gómez como directora citada no aplica; ponemos al alumno como autor
--- Para la tesis del alumno el autor es él mismo; usamos un autor genérico:
--- (ya insertamos a Ana Luisa Gómez id=9, la usamos como referencia interna de autoría)
-
--- Ref 6: Tesis licenciatura → Valeria López (autor)
-INSERT INTO referencia_autor VALUES (6, 10, 1, 'Autor');  -- Roberto Sánchez
-
--- Ref 7: Attention Is All You Need (paper original tiene 8 autores; ponemos 3 representativos)
--- Usamos autores ya registrados
-INSERT INTO referencia_autor VALUES (7, 4, 1, 'Autor'), (7, 5, 2, 'Coautor');
-
--- Ref 8: Artículo UNAM → Ana Luisa Gómez, Claudia Fuentes
-INSERT INTO referencia_autor VALUES (8, 9, 1, 'Autor'), (8, 11, 2, 'Coautor');
-
--- Ref 9: Sequelize Docs → sin autor personal registrado (fuente institucional)
--- Ref 10: MDN → sin autor personal registrado
-
--- ──────────────────────────────────────────────────────────
--- PALABRAS CLAVE
--- ──────────────────────────────────────────────────────────
-
-INSERT INTO palabra_clave (palabra) VALUES
-('base de datos'),('sql'),('normalización'),('transacciones'),
-('inteligencia artificial'),('aprendizaje automático'),('redes neuronales'),
-('redes de computadoras'),('protocolo tcp/ip'),('modelo osi'),
-('investigación de operaciones'),('programación lineal'),
-('tesis'),('maestría'),('licenciatura'),
-('transformer'),('atención'),('procesamiento de lenguaje natural'),
-('algoritmos genéticos'),('optimización'),('horarios'),
-('sequelize'),('orm'),('node.js'),
-('mdn'),('desarrollo web'),('servidor');
-
--- ──────────────────────────────────────────────────────────
--- REFERENCIA_PALABRA
--- ──────────────────────────────────────────────────────────
-
--- Ref 1: Database System Concepts
-INSERT INTO referencia_palabra VALUES (1,1),(1,2),(1,3),(1,4);
-
--- Ref 2: AI Modern Approach
-INSERT INTO referencia_palabra VALUES (2,5),(2,6),(2,7);
-
--- Ref 3: Computer Networks
-INSERT INTO referencia_palabra VALUES (3,8),(3,9),(3,10);
-
--- Ref 4: Investigación de Operaciones
-INSERT INTO referencia_palabra VALUES (4,11),(4,12);
-
--- Ref 5: Tesis BD distribuidas
-INSERT INTO referencia_palabra VALUES (5,1),(5,2),(5,13),(5,14);
-
--- Ref 6: Tesis IoT + CNN
-INSERT INTO referencia_palabra VALUES (6,7),(6,8),(6,15);
-
--- Ref 7: Attention Is All You Need
-INSERT INTO referencia_palabra VALUES (7,16),(7,17),(7,18);
-
--- Ref 8: Algoritmos genéticos horarios
-INSERT INTO referencia_palabra VALUES (8,19),(8,20),(8,21);
-
--- Ref 9: Sequelize Docs
-INSERT INTO referencia_palabra VALUES (9,22),(9,23),(9,24);
-
--- Ref 10: MDN
-INSERT INTO referencia_palabra VALUES (10,25),(10,26),(10,27);
-
--- ──────────────────────────────────────────────────────────
--- CITAS GENERADAS (ejemplos pre-generados)
--- ──────────────────────────────────────────────────────────
-
-INSERT INTO cita_generada (id_referencia, id_formato, id_usuario, texto_cita, texto_referencia_completa, verificada) VALUES
-
--- Ref 1 en APA por Carlos (id_usuario=2)
-(1, 1, 2,
- '(Silberschatz et al., 2020)',
- 'Silberschatz, A., Korth, H. F. & Sudarshan, S. (2020). *Database System Concepts: Seventh Edition* (7.ª ed.). McGraw-Hill Education.',
- 1),
-
--- Ref 1 en IEEE por Miguel (id_usuario=4)
-(1, 2, 4,
- '[1]',
- 'A. Silberschatz, H. F. Korth, S. Sudarshan, *Database System Concepts*, 7ª ed. McGraw-Hill Education, 2020.',
- 1),
-
--- Ref 2 en APA por Carlos (id_usuario=2)
-(2, 1, 2,
- '(Russell & Norvig, 2021)',
- 'Russell, S. J. & Norvig, P. (2021). *Artificial Intelligence: A Modern Approach: Fourth Edition* (4.ª ed.). Pearson.',
- 1),
-
--- Ref 7 en APA por Andrés (id_usuario=6)
-(7, 1, 6,
- '(Russell & Norvig, 2017)',
- 'Russell, S. J. & Norvig, P. (2017). Attention Is All You Need. *Advances in Neural Information Processing Systems (NeurIPS)*, *30*, 5998–6008. https://doi.org/10.48550/arXiv.1706.03762',
- 0),
-
--- Ref 7 en IEEE por Andrés (id_usuario=6)
-(7, 2, 6,
- '[2]',
- 'S. J. Russell, P. Norvig, "Attention Is All You Need," *Advances in Neural Information Processing Systems (NeurIPS)*, vol. 30, pp. 5998–6008, 2017.',
- 0),
-
--- Ref 9 en APA por Carlos (id_usuario=2)
-(9, 1, 2,
- '(Sequelize Documentation, 2024)',
- 'Sequelize Documentation. (2024). *Documentación oficial de Sequelize ORM*. Sequelize. Recuperado el 2025-01-10. https://sequelize.org/docs/v6/',
- 0);
-
--- ──────────────────────────────────────────────────────────
--- VERIFICACIÓN RÁPIDA
--- ──────────────────────────────────────────────────────────
-SELECT 'usuarios'         AS tabla, COUNT(*) AS registros FROM usuario
-UNION ALL
-SELECT 'tipos_fuente',      COUNT(*) FROM tipos_fuente
-UNION ALL
-SELECT 'referencias',       COUNT(*) FROM referencia
-UNION ALL
-SELECT 'autores',           COUNT(*) FROM autor
-UNION ALL
-SELECT 'referencia_autor',  COUNT(*) FROM referencia_autor
-UNION ALL
-SELECT 'palabras_clave',    COUNT(*) FROM palabra_clave
-UNION ALL
-SELECT 'referencia_palabra',COUNT(*) FROM referencia_palabra
-UNION ALL
-SELECT 'libros',            COUNT(*) FROM libro
-UNION ALL
-SELECT 'tesis',             COUNT(*) FROM tesis
-UNION ALL
-SELECT 'articulos_revista', COUNT(*) FROM articulo_revista
-UNION ALL
-SELECT 'paginas_web',       COUNT(*) FROM pagina_web
-UNION ALL
-SELECT 'formatos_cita',     COUNT(*) FROM formato_cita
-UNION ALL
-SELECT 'citas_generadas',   COUNT(*) FROM cita_generada;
+-- IA
+INSERT INTO referencia_tema VALUES(86,154);
+INSERT INTO referencia_tema VALUES(87,155);
+INSERT INTO referencia_tema VALUES(88,209);
+INSERT INTO referencia_tema VALUES(89,210);
+INSERT INTO referencia_tema VALUES(90,216);
